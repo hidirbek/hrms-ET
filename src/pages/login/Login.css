@@ -1,0 +1,102 @@
+.login-main{
+  padding: 160px 0px 200px 0;
+  background-color:#F4F5F7;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.login_form-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.logo-wrapper{
+  display: flex;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+}
+.logo-name{
+  width: 80px;
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 10px;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.inp{
+  display: flex;
+  width: 367px;
+  padding: 12px 16px;
+  align-items: flex-start;
+  gap: 24px;
+  color:  #4B5768;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  outline: none;
+  background: none;
+  border-radius: 8px;
+  border: 1px solid #4B5768;
+  margin-bottom: 24px;
+}
+.login-form>span{
+  overflow: hidden;
+  color:  #191D23;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.login-btn{
+  display: flex;
+  width: 400px;
+  height: 48px;
+  padding: 16px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #E31E24;
+  color:  #FFF;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+  border: none;
+}
+
+.login-btn:hover{
+  background-color:#c20f15;
+  cursor: pointer;
+}
+.passw-icon{
+  /* margin:12px 0 0 -40px; */
+  position: absolute;
+  right: 15px;
+  top: 12px;
+}
+.passw-wrp{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+
+}

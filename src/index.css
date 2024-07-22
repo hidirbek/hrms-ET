@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Circe';
+  src: url('./fonts/CRC25.otf') format('otf'),
+       url('./fonts/CRC35.otf') format('otf'),
+       url('./fonts/CRC55.otf') format('otf'),
+       url('./fonts/CRC65.otf') format('otf');
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100%;
+  font-family: 'Circe', sans-serif;
+  margin: 0;
 }
+
+

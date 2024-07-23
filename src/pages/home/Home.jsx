@@ -1,12 +1,12 @@
 import React from "react";
 import { Layout } from "../../components";
-import Main from "../../components/main/Main";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <>
       <Layout>
-        <Main />
+        <Link to="/dashboard">Dashboard</Link>
       </Layout>
     </>
   );

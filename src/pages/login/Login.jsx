@@ -27,14 +27,6 @@ const Login = () => {
 
   async function handleForm(e) {
     e.preventDefault();
-    // const { token } = await api.login(
-    //   loginInput.current.value,
-    //   passwordInput.current.value
-    // );
-    // if (token) {
-    //   localStorage.setItem("token", token);
-    //   navigate("/");
-    // }
   }
   return (
     <div className="login-main">

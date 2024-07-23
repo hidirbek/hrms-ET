@@ -1,7 +1,7 @@
 .login-main{
   padding: 160px 0px 200px 0;
   background-color:#F4F5F7;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +39,7 @@
 
 .inp{
   display: flex;
-  width: 367px;
+  width: 400px;
   padding: 12px 16px;
   align-items: flex-start;
   gap: 24px;
@@ -95,8 +95,4 @@
 .passw-wrp{
   position: relative;
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-
-
 }

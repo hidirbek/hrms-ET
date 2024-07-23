@@ -1,0 +1,29 @@
+.site-sidebar{
+  width: 220px;
+  height: 900px;
+  background-color: aqua;
+  grid-area: sidebar;
+}
+.hrm-logo{
+  color: #F00;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  width: 80px;
+  margin: 12px 0 0 12px;
+}
+.hrm-logo>span{
+  display: block;
+}
+.dark-color{
+  color: #111827;
+}
+
+.sidebar_items-wrapper{
+  width: 100%;
+}
+.sidebar-item{
+  width: 100%;
+  height: 40px;
+}

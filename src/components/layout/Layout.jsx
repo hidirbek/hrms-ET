@@ -1,16 +1,15 @@
 import React from "react";
 import Header from "../header/Header";
-import Footer from "../footer/Footer";
 import Sidebar from "../sidebar/Sidebar";
+import "./Layout.css";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="layout">
       <Header />
       <Sidebar />
       <main>{children}</main>
-      <Footer />
-    </>
+    </div>
   );
 };
 

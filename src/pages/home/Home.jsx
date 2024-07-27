@@ -1,15 +1,12 @@
 import React from "react";
-import { Layout } from "../../components";
-import { Link } from "react-router-dom";
 
 const Home = () => {
-  return (
-    <>
-      <Layout>
-        <Link to="/dashboard">Dashboard</Link>
-      </Layout>
-    </>
-  );
+  if (localStorage.getItem("token")) {
+    window.location = "/v1/dashboard";
+  } else {
+    window.location = "/v1/login";
+  }
+  return <></>;
 };
 
 export default Home;

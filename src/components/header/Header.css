@@ -1,4 +1,108 @@
 .site-header{
   background: linear-gradient(90deg, #000 20.1%, #430000 46.1%, #FF1818 100%);
   grid-area: header;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white-txt);
+}
+
+.site_logo-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 70px;
+}
+.site-logo{
+  width: 62;
+  height:  62px;
+}
+
+.logo_name{
+  color: var(--white-txt);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.ring-icon{
+  background: none;
+  color: var(--white-txt);
+  border: 0;
+}
+.header_nav-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lang-selector{
+  background: none;
+  border: none;
+  padding: 5px;
+  outline: none;
+  color: var(--white-txt);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+}
+.lang-selector>option{
+  color: var(--primary-text);
+}
+.lang_wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.user-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--white-txt);
+}
+.profile_info{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.user-fn{
+  width: 65px;
+}
+
+.buttons{
+  width: 160px;
+  height: 40px;
+  padding: 8px 12px;
+  position: absolute;
+  right: -16px;
+  top: 64px;
+  background-color: var(--white-txt);
+  border-radius: 0px 0 5px 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+.profile_info:hover{
+  cursor: pointer;
+}
+.buttons button{
+  width: 56px;
+  height: 17px;
+  padding: 0px 14px 0px 13px;
+  border: 0.5px solid #8A8A8A;
+  color: var(--primary-text, #111827);
+  font-family: Circe;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: none;
 }

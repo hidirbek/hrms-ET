@@ -1,6 +1,6 @@
 .login-main{
   padding: 160px 0px 200px 0;
-  background-color:#F4F5F7;
+  background-color: var(--page-bg);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@
 }
 .logo-name{
   width: 80px;
-  color: #000;
+  color: var(--primary-text);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -73,8 +73,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  background: #E31E24;
-  color:  #FFF;
+  background: var(--main-red);
+  color:  var(--white-txt);
   text-align: center;
   font-size: 16px;
   font-weight: 700;
@@ -83,7 +83,7 @@
 }
 
 .login-btn:hover{
-  background-color:#c20f15;
+  background-color:var(--main-red);
   cursor: pointer;
 }
 .passw-icon{

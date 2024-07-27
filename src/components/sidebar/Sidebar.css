@@ -1,12 +1,12 @@
 .site-sidebar{
   width: 220px;
   height: 100vh;
-  background-color: #fff;
+  background-color: var(--white-txt);
   grid-area: sidebar;
-  border-right: 1px solid #000;
+  border-right: 1px solid var(--primary-text);
 }
 .hrm-logo{
-  color: #F00;
+  color: var(--main-red);
   font-size: 20px;
   font-style: normal;
   font-weight: 800;
@@ -18,7 +18,7 @@
   display: block;
 }
 .dark-color{
-  color: #111827;
+  color: var(--primary-text);
 }
 
 .sidebar_items-wrapper{
@@ -53,14 +53,14 @@
 } */
 
 .active{
-  color: white;
-  stroke: #fff;
-  background: #E31E24;
+  color: var(--white-txt);
+  stroke: var(--white-txt);
+  background: var(--main-red);
 }
 .active .stroke_icon path{
-  stroke: #fff;
+  stroke: var(--white-txt);
   fill: none;
 }
 .active svg path{
-  fill: #fff;
+  fill: var(--white-txt);
 }

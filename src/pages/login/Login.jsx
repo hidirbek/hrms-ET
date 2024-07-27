@@ -1,17 +1,14 @@
 import React, { /*useRef,*/ useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-// import { Icon } from "react-icons-kit";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 const Login = () => {
-  // const loginInput = useRef(null);
-  // const passwordInput = useRef(null);
-
-  // const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(<VisibilityOffIcon />);
@@ -25,9 +22,32 @@ const Login = () => {
     }
   };
 
-  async function handleForm(e) {
+  const handleLogin = async (e) => {
     e.preventDefault();
-  }
+    try {
+      const response = await axios.post(
+        "http://10.30.0.46:4040/v1/auth/login",
+        {
+          username,
+          password,
+        }
+      );
+      // console.log(response.data);
+
+      const { token } = response.data;
+      localStorage.setItem("token", token);
+      if (localStorage.getItem("token")) {
+        navigate("/v1/dashboard");
+      } else {
+        alert("Token not available!");
+        navigate("/v1/login");
+      }
+    } catch (err) {
+      alert("Invalid username or password");
+      setUsername("");
+      setPassword("");
+    }
+  };
   return (
     <div className="login-main">
       <div className="login_form-wrapper">
@@ -50,15 +70,17 @@ const Login = () => {
           </div>
           <div className="logo-name">East Telecom</div>
         </div>
-        <form className="login-form" onSubmit={handleForm}>
+        <form className="login-form" onSubmit={handleLogin}>
           <span>Login</span>
           <input
-            type="email"
+            value={username}
+            type="text"
             name=""
             id=""
             className="login-input inp"
             placeholder="Username"
             required
+            onChange={(e) => setUsername(e.target.value)}
           />
           <span>Password</span>
           <div className="passw-wrp">
@@ -67,10 +89,10 @@ const Login = () => {
               type={type}
               name="password"
               placeholder="Password"
-              value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
               required
+              value={password}
             />
             <span className="passw-icon" onClick={handleToggle}>
               {icon}
@@ -79,8 +101,6 @@ const Login = () => {
           <button type="submit" className="login-btn">
             Login
           </button>
-
-          <div class="mb-4 flex"></div>
         </form>
       </div>
     </div>

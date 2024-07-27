@@ -9,20 +9,22 @@ import Users from "../pages/users/Users";
 import Employee from "../pages/employee/Employee";
 import Documents from "../pages/documents/Documents";
 import Trainings from "../pages/trainings/Trainings";
+import Profile from "../pages/profile/Profile";
 
 const index = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="/documents" element={<Documents />} />
-        <Route path="/employees" element={<Employee />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/trainings" element={<Trainings />} />
+        <Route path="/v1/login" element={<Login />} />
+        <Route path="/v1/dashboard" element={<Dashboard />} />
+        <Route path="/v1/calendar" element={<Calendar />} />
+        <Route path="/v1/company" element={<Company />} />
+        <Route path="/v1/documents" element={<Documents />} />
+        <Route path="/v1/employees" element={<Employee />} />
+        <Route path="/v1/users" element={<Users />} />
+        <Route path="/v1/trainings" element={<Trainings />} />
+        <Route path="/v1/profile/:id" element={<Profile />} />
       </Routes>
     </>
   );

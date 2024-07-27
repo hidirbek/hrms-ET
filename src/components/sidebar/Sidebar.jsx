@@ -13,8 +13,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/dashboard"
+            activeclassname="active"
+            to="/v1/dashboard"
           >
             <svg
               className="stroke_icon"
@@ -27,9 +27,9 @@ const Sidebar = () => {
               <path
                 d="M20.9279 14.625H16.7299C16.1736 14.625 15.64 14.8453 15.2457 15.2377C14.8515 15.6301 14.6287 16.1628 14.6261 16.719V20.917C14.6261 21.4749 14.8478 22.01 15.2423 22.4046C15.6368 22.7991 16.172 23.0208 16.7299 23.0208H20.9279C21.4839 23.0179 22.0163 22.795 22.4085 22.4008C22.8007 22.0065 23.0209 21.4731 23.0209 20.917V16.719C23.0209 16.1639 22.8003 15.6316 22.4078 15.2391C22.0153 14.8466 21.483 14.626 20.9279 14.626M9.2701 14.625H5.07219C4.516 14.6281 3.98366 14.8513 3.59148 15.2457C3.19931 15.6401 2.97918 16.1737 2.97919 16.7299V20.9278C2.97919 21.4829 3.1997 22.0153 3.59221 22.4078C3.98473 22.8003 4.51709 23.0208 5.07219 23.0208H9.2701C9.8262 23.0208 10.3597 22.8006 10.7539 22.4084C11.1482 22.0162 11.3711 21.4839 11.3739 20.9278V16.7299C11.3739 16.1719 11.1523 15.6368 10.7577 15.2422C10.3632 14.8477 9.82807 14.626 9.2701 14.626M9.2701 2.97913H5.07219C4.79733 2.97913 4.52516 3.03326 4.27123 3.13845C4.0173 3.24363 3.78657 3.3978 3.59221 3.59215C3.39786 3.7865 3.24369 4.01723 3.13851 4.27117C3.03332 4.5251 2.97919 4.79727 2.97919 5.07213V9.27004C2.97918 9.82614 3.19935 10.3596 3.59155 10.7539C3.98376 11.1481 4.5161 11.371 5.07219 11.3739H9.2701C9.82807 11.3739 10.3632 11.1522 10.7577 10.7577C11.1523 10.3631 11.3739 9.82801 11.3739 9.27004V5.07213C11.3711 4.51603 11.1482 3.98369 10.7539 3.59149C10.3597 3.19928 9.8262 2.97912 9.2701 2.97913ZM20.9279 2.97913H16.7299C16.1738 2.97912 15.6404 3.19928 15.2461 3.59149C14.8519 3.98369 14.629 4.51603 14.6261 5.07213V9.27004C14.6264 9.82793 14.8481 10.3629 15.2426 10.7574C15.6371 11.1518 16.1721 11.3736 16.7299 11.3739H20.9279C21.4839 11.371 22.0163 11.1481 22.4085 10.7539C22.8007 10.3596 23.0209 9.82614 23.0209 9.27004V5.07213C23.0209 4.51703 22.8003 3.98467 22.4078 3.59215C22.0153 3.19964 21.483 2.97913 20.9279 2.97913Z"
                 stroke="#111827"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             Dashboard
@@ -38,8 +38,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/company"
+            to="/v1/company"
+            activeclassname="active"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/trainings"
+            activeclassname="active"
+            to="/v1/trainings"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +80,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/employees"
+            activeclassname="active"
+            to="/v1/employees"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +101,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/documents"
+            activeclassname="active"
+            to="/v1/documents"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -122,8 +122,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/calendar"
+            activeclassname="active"
+            to="/v1/calendar"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -143,8 +143,8 @@ const Sidebar = () => {
         <li className="sidebar-item">
           <NavLink
             className="sidebar_link"
-            activeClassName="active"
-            to="/users"
+            activeclassname="active"
+            to="/v1/users"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -154,8 +154,6 @@ const Sidebar = () => {
               fill="none"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
                 d="M18.0591 14.2241C19.5433 15.2316 20.5833 16.5966 20.5833 18.4166V21.6666H23.8333C24.4291 21.6666 24.9166 21.1791 24.9166 20.5833V18.4166C24.9166 16.055 21.0491 14.6575 18.0591 14.2241Z"
                 fill="#111827"
               />
@@ -164,8 +162,6 @@ const Sidebar = () => {
                 fill="#111827"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
                 d="M16.25 13C18.6441 13 20.5833 11.0609 20.5833 8.66671C20.5833 6.27254 18.6441 4.33337 16.25 4.33337C15.7408 4.33337 15.2641 4.44171 14.8091 4.59337C15.7414 5.74628 16.2499 7.18406 16.2499 8.66671C16.2499 10.1494 15.7414 11.5871 14.8091 12.74C15.2641 12.8917 15.7408 13 16.25 13ZM9.74998 14.0834C6.85748 14.0834 1.08331 15.535 1.08331 18.4167V20.5834C1.08331 21.1792 1.57081 21.6667 2.16665 21.6667H17.3333C17.9291 21.6667 18.4166 21.1792 18.4166 20.5834V18.4167C18.4166 15.535 12.6425 14.0834 9.74998 14.0834Z"
                 fill="#111827"
               />

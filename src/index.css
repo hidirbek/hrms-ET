@@ -21,3 +21,13 @@ body {
 ul{
   list-style: none ;
 }
+:root{
+  --primary-text: #111827;
+  --secondary-text: #687588;
+  --main-red:#E31E24;
+  --blue-btn:#0075FF;
+  --green-btn:#006115;
+  -stroke: #E0DDDD;
+  --page-bg: #F4F3F3;
+  --white-txt:#fff;
+}

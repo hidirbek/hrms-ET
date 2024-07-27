@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-// import { NavLink } from "react-router-dom";
+
+import { NavLink } from "react-router-dom";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
@@ -155,12 +156,10 @@ const Header = () => {
           </div>
           {showButtons && (
             <div className="buttons">
-              <button onClick={logout} className="profile">
-                Profile
-              </button>
-              <button onClick={logout} className="logout">
+              <NavLink to="/v1/profile/:id">Profile</NavLink>
+              <NavLink to="/v1/login" onClick={logout}>
                 Logout
-              </button>
+              </NavLink>
             </div>
           )}
         </div>

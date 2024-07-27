@@ -93,7 +93,7 @@
 .profile_info:hover{
   cursor: pointer;
 }
-.buttons button{
+.buttons a{
   width: 56px;
   height: 17px;
   padding: 0px 14px 0px 13px;

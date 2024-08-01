@@ -1,0 +1,128 @@
+.site_dashboard-wrapper{
+  background: #F4F5F7;
+  padding: 35px;
+  height: 100%;
+}
+
+
+.dash_tools-wrapper{
+  display: grid;
+  grid-template-columns: 360px 430px 290px;
+  gap:35px ;
+  grid-template-rows: 300px;
+}
+.dash_tools-wrapper>div{
+  padding: 15px 10px;
+  background: var(--white-txt);
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: var(--primary-text);
+}
+
+.dash_announcement div{
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+.add-btn{
+  border-radius: 8px;
+  background: var(--main-red, #E31E24);
+  color: var(--white-txt);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 7px 16px;
+  border: 0;
+}
+.add-btn:hover{
+  background-color: #CD090F;
+  cursor: pointer;
+}
+.add-btn:focus{
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.announcement-head{
+  border-bottom: 1px solid #FAFAFA;
+  height: 45px !important;
+}
+.announcement-head>h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+.anc_title{
+  font-size: 12px;
+  font-weight: 400;
+}
+.new_an{
+  color: var(--main-red);
+  font-size: 10px;
+  font-weight: 400;
+  background: #FEB8B8;
+  padding: 6px 11px;
+  border-radius: 3px;
+}
+
+.dash_visitors_statis{
+  width: 430px;
+  height: 300px;
+  padding: 20px 10px ;
+}
+
+
+
+
+
+
+
+
+.MuiPickersCalendarHeader-root{
+  margin-top: 0 !important;
+}
+
+
+.MuiStack-root {
+  padding-top: 0px !important;
+
+}
+.MuiPickersCalendarHeader-label,.MuiPickersYear-yearButton,.MuiButtonBase-root,.MuiMonthCalendar-root, .MuiTypography-root{
+  font-family: 'Circe', sans-serif !important
+
+}
+
+
+.MuiPickersMonth-monthButton{
+  font-family: 'Circe', sans-serif !important
+
+}
+.MuiDateCalendar-root{
+  width: auto !important;
+  height: auto !important;
+}
+.MuiPickersSlideTransition-root{
+  min-height: 190px;
+  overflow: hidden;
+  min-height: none !important;
+}
+.MuiPickersDay-today{
+  background-color: #01A2F9 !important;
+  color: var(--white-txt) !important;
+  border: 0 !important;
+}
+.MuiDateCalendar-root{
+  max-height: 275px !important;
+  /* overflow-y: scroll !important; */
+}
+.MuiYearCalendar-root, .MuiMonthCalendar-root{
+  width: auto !important;
+}
+
+
+
+.nav_cards-wraper{
+  margin-top: 33px;
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 35px;
+
+}

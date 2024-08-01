@@ -1,7 +1,7 @@
 import React, { /*useRef,*/ useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import AuthService from "../../service/AuthService";
 
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
@@ -25,28 +25,36 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://10.30.0.46:4040/v1/auth/login",
-        {
-          username,
-          password,
-        }
-      );
-      // console.log(response.data);
-
-      const { token } = response.data;
-      localStorage.setItem("token", token);
-      if (localStorage.getItem("token")) {
-        navigate("/v1/dashboard");
-      } else {
-        alert("Token not available!");
-        navigate("/v1/login");
-      }
-    } catch (err) {
-      alert("Invalid username or password");
-      setUsername("");
-      setPassword("");
+      await AuthService.login(username, password);
+      alert("Login successful!");
+      navigate("/v1/dashboard");
+    } catch (error) {
+      alert("Login failed: " + error.response.data.message);
     }
+    // e.preventDefault();
+    // try {
+    //   const response = await axios.post(
+    //     "http://10.30.0.46:4040/v1/auth/login",
+    //     {
+    //       username,
+    //       password,
+    //     }
+    //   );
+    //   // console.log(response.data);
+
+    //   const { token } = response.data;
+    //   localStorage.setItem("token", token);
+    //   if (localStorage.getItem("token")) {
+    //     navigate("/v1/dashboard");
+    //   } else {
+    //     alert("Token not available!");
+    //     navigate("/v1/login");
+    //   }
+    // } catch (err) {
+    //   alert("Invalid username or password");
+    //   setUsername("");
+    //   setPassword("");
+    // }
   };
   return (
     <div className="login-main">

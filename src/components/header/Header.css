@@ -75,7 +75,7 @@
 }
 
 .buttons{
-  width: 160px;
+  width: 170px;
   height: 40px;
   padding: 8px 12px;
   position: absolute;
@@ -94,13 +94,13 @@
   cursor: pointer;
 }
 .buttons a{
-  width: 56px;
+  /* width: 56px; */
   height: 17px;
   padding: 0px 14px 0px 13px;
   border: 0.5px solid #8A8A8A;
   color: var(--primary-text, #111827);
   font-family: Circe;
-  font-size: 10px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

@@ -1,8 +1,10 @@
 import React from "react";
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 const Sidebar = () => {
+  const { t } = useTranslation();
+  // console.log(t("sb_dashboard"));
   return (
     <div className="site-sidebar">
       <div className="hrm-logo">
@@ -32,7 +34,7 @@ const Sidebar = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            Dashboard
+            {t("sb_dashboard")}
           </NavLink>
         </li>
         <li className="sidebar-item">
@@ -53,7 +55,7 @@ const Sidebar = () => {
                 fill="#111827"
               />
             </svg>
-            Company
+            {t("sb_company")}
           </NavLink>
         </li>
         <li className="sidebar-item">
@@ -74,7 +76,7 @@ const Sidebar = () => {
                 fill="#111827"
               />
             </svg>
-            Trainings
+            {t("sb_trainings")}
           </NavLink>
         </li>
         <li className="sidebar-item">
@@ -95,7 +97,7 @@ const Sidebar = () => {
                 fill="#111827"
               />
             </svg>
-            Employees
+            {t("sb_employees")}
           </NavLink>
         </li>
         <li className="sidebar-item">
@@ -116,7 +118,7 @@ const Sidebar = () => {
                 fill="#111827"
               />
             </svg>
-            Documents
+            {t("sb_documents")}
           </NavLink>
         </li>
         <li className="sidebar-item">
@@ -137,7 +139,7 @@ const Sidebar = () => {
                 fill="#111827"
               />
             </svg>
-            Calendar
+            {t("sb_calendar")}
           </NavLink>
         </li>
         <li className="sidebar-item">
@@ -166,7 +168,7 @@ const Sidebar = () => {
                 fill="#111827"
               />
             </svg>
-            Users
+            {t("sb_users")}
           </NavLink>
         </li>
       </ul>

@@ -1,4 +1,18 @@
 {
-  "welcome": "Xush kelibsiz",
-  "description": "Bu ta'rif."
+  "sb_dashboard": "Panel",
+  "sb_company": "Kompaniya",
+  "sb_trainings": "Treninglar",
+  "sb_employees": "Xodimlar",
+  "sb_documents": "Hujjatlar",
+  "sb_calendar": "Kalendar",
+  "sb_users": "Foydalanuvchilar",
+  "hd_profile": "Profil",
+  "hd_logout": "Chiqish",
+  "db_announcement": "E'lon",
+  "db_add-btn": "Qo'shish +",
+  "db_ann-title": "E'lon sarlavhasi",
+  "db_ann-new": "Yangi",
+  "card_department": "Bo'lim",
+  "card_course": "Kurs",
+  "card_manage": "Boshqarish"
 }

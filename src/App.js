@@ -1,11 +1,12 @@
 import Routes from "./routes";
+import { LanguageProvider } from "./components/languageSelector/LanguageContext";
 import "./App.css";
 
 function App() {
   return (
-    <div>
+    <LanguageProvider>
       <Routes />
-    </div>
+    </LanguageProvider>
   );
 }
 

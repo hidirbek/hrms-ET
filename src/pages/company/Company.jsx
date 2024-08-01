@@ -1,11 +1,22 @@
 import React from "react";
 import { Layout } from "../../components";
+import "./Company.css";
+import CompanyDropdown from "../../components/companyDropdown/CompanyDropdown";
 
 const Company = () => {
   return (
-    <div>
-      <Layout>company</Layout>
-    </div>
+    <Layout>
+      <div className="company_pg">
+        <div className="company-title">Company</div>
+        <div className="company_content-wrapper">
+          <div className="company_content">
+            <div>
+              <CompanyDropdown />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
   );
 };
 

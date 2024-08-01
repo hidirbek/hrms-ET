@@ -8,10 +8,12 @@ import Popper from "@mui/material/Popper";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-
+import { useLanguage } from "../../components/languageSelector/LanguageContext";
 import { useTranslation } from "react-i18next";
+import AuthService from "../../service/AuthService";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [userInfo, setUserInfo] = useState("");
 
   const [showButtons, setShowButtons] = useState(false);
@@ -22,10 +24,10 @@ const Header = () => {
   // console.log(userInfo);
 
   const logout = () => {
-    localStorage.removeItem("token");
+    AuthService.logout();
   };
   const fetchUserInfo = () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken");
     const decoded = jwtDecode(token);
     const userId = decoded.id;
 
@@ -74,10 +76,11 @@ const Header = () => {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
 
-  const { i18n } = useTranslation();
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+  const { language, changeLanguage } = useLanguage();
+  // console.log(changeLanguage);
+  // const changeLanguage = (lng) => {
+  //   // i18n.changeLanguage(lng);
+  // };
   return (
     <header className="site-header">
       <div className="site_logo-wrapper">
@@ -133,6 +136,7 @@ const Header = () => {
           </div>
           <select
             onChange={(e) => changeLanguage(e.target.value)}
+            value={language}
             defaultValue="en"
             className="lang-selector"
           >
@@ -156,9 +160,9 @@ const Header = () => {
           </div>
           {showButtons && (
             <div className="buttons">
-              <NavLink to="/v1/profile/:id">Profile</NavLink>
+              <NavLink to="/v1/profile/:id">{t("hd_profile")}</NavLink>
               <NavLink to="/v1/login" onClick={logout}>
-                Logout
+                {t("hd_logout")}
               </NavLink>
             </div>
           )}

@@ -1,4 +1,19 @@
 {
-  "welcome": "Welcome",
-  "description": "This is a description."
+  "sb_dashboard": "Dashboard",
+  "sb_company": "Company",
+  "sb_trainings": "Trainings",
+  "sb_employees": "Employees",
+  "sb_documents": "Documents",
+  "sb_calendar": "Calendar",
+  "sb_users": "Users",
+  "hd_profile": "Profile",
+  "hd_logout": "Log out",
+  "db_announcement": "Announcement",
+  "db_add-btn": "Add +",
+  "db_ann-title": "Announcement title",
+  "db_ann-new": "New",
+  "card_department": "Department",
+  "card_course": "Courses",
+
+  "card_manage": "Manage"
 }

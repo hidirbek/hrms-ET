@@ -1,6 +1,6 @@
 .site-sidebar{
   width: 220px;
-  height: 100vh;
+  height: 100%;
   background-color: var(--white-txt);
   grid-area: sidebar;
   border-right: 1px solid var(--primary-text);

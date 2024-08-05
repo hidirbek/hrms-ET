@@ -23,7 +23,7 @@ const Announcement = () => {
         <h4>{t("db_announcement")}</h4>
         {role === "admin" ? (
           <button onClick={add_announc} className="add-btn">
-            {t("db_ann-new")}
+            {t("add-btn")}
           </button>
         ) : null}
       </div>

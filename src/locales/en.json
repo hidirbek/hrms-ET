@@ -9,11 +9,10 @@
   "hd_profile": "Profile",
   "hd_logout": "Log out",
   "db_announcement": "Announcement",
-  "db_add-btn": "Add +",
+  "add-btn": "Add +",
   "db_ann-title": "Announcement title",
   "db_ann-new": "New",
   "card_department": "Department",
   "card_course": "Courses",
-
   "card_manage": "Manage"
 }

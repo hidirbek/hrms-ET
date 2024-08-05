@@ -4,6 +4,7 @@
   background-color: var(--white-txt);
   grid-area: sidebar;
   border-right: 1px solid var(--primary-text);
+  min-height: 100vh;
 }
 .hrm-logo{
   color: var(--main-red);

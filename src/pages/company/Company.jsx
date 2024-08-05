@@ -10,8 +10,10 @@ const Company = () => {
         <div className="company-title">Company</div>
         <div className="company_content-wrapper">
           <div className="company_content">
-            <div>
+            <div className="">
               <CompanyDropdown />
+
+              {/* <CompanyTree /> */}
             </div>
           </div>
         </div>

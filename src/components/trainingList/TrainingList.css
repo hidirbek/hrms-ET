@@ -1,0 +1,113 @@
+.training_list-wrapper{
+  margin-top: 15px;
+  background-color: var(--white-txt);
+  min-height: 100vh;
+  font-size: 20px;
+  color: var(--primary-text);
+  padding: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.tr-search-add-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.search-form{
+  display: flex;
+  text-align: center;
+}
+.search-input{
+  padding: 3px 10px 3px 5px;
+  border-radius: 3px 0px 0px 3px;
+  border: 1px solid #BAB7B7;
+  color: #B3AEAE;
+  font-size: 20px;
+  width: 180px;
+  outline: none;
+}
+.search-btn{
+  padding: 5px 32px;
+  border-radius: 0px 3px 3px 0px;
+  border: none;
+  background-color: var(--main-red);
+  color: var(--white-txt);
+  font-size: 20px;
+  font-weight: 700;
+}
+.search-btn:hover{
+  background-color: #840105;
+  cursor: pointer;
+}
+
+.training_list{
+  display: grid;
+  grid-template-columns:4% 25% 22% 6% 7% 1fr ;
+  padding: 14px 20px;
+  /* grid-template-rows: repeat() 60px; */
+  gap: 20px;
+  border-bottom: 1px solid #F1F2F4;
+  align-items: center;
+}
+
+.training_list-header{
+  color: var(--secondary-text, #687588);
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: #FAFAFA;
+  border-bottom: none;
+
+}
+
+.training_id{
+  margin-left: 8px;
+}
+.training_title{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.training_dep{
+  display: flex;
+  flex-direction: column;
+}
+.training_dep >span:nth-child(2){
+  font-size: 13px;
+}
+.tr_floor{
+
+  font-size: 16px;
+}
+.tr_time{
+  font-size: 12px;
+
+}
+.tr_actions{
+  display: flex;
+  gap: 10px;
+  align-self: center;
+}
+.tr_actions >button{
+  padding: 5px 22px;
+  color: var(--white-txt);
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.edit_btn{
+  background-color: var(--green-btn);
+}
+.del_btn{
+  background-color: var(--main-red);
+}
+.del_btn:hover{
+  background-color: #840105;
+}
+
+.edit_btn:hover{
+  background-color: #043b10;
+
+}

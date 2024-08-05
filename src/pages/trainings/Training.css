@@ -1,0 +1,12 @@
+
+.training_page-wrapper{
+  background-color: var(--page-bg);
+  padding: 20px 45px 27px 45px;
+}
+
+.training-title{
+  color: var(--primary-text, #111827);
+  font-size: 40px;
+  font-weight: 700;
+  /* margin: 20px 0 27px 0; */
+}

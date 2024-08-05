@@ -5,7 +5,6 @@ import {
   AccordionDetails,
   Typography,
   Box,
-  CircularProgress,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./CompanyDropdown.css";
@@ -13,7 +12,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const DropdownItem = (department) => (
-  <Accordion>
+  <Accordion className="first_column">
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"
@@ -23,7 +22,7 @@ const DropdownItem = (department) => (
         <strong className="comStr_title">
           {department.department.dep_title}
         </strong>
-        <p className="comStr_head">{department.department.dep_head}</p>
+        <span className="comStr_head">{department.department.dep_head}</span>
       </Typography>
     </AccordionSummary>
     <AccordionDetails className="sub-department">
@@ -42,7 +41,7 @@ const DropdownItem = (department) => (
               >
                 <Typography>
                   <strong className="comStr_title">{div.div_title}</strong>
-                  <p className="comStr_head">{div.div_head}</p>
+                  <span className="comStr_head">{div.div_head}</span>
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className="sub-department">
@@ -56,7 +55,7 @@ const DropdownItem = (department) => (
                         <strong className="comStr_title">
                           {team.team_title}
                         </strong>
-                        <p className="comStr_head">{team.team_head}</p>
+                        <span className="comStr_head">{team.team_head}</span>
                       </Typography>
                     </Box>
                   ))
@@ -85,7 +84,7 @@ const CoeDep = (coe) => (
     >
       <Typography>
         <strong className="comStr_title">{coe.coe.coe_title}</strong>
-        <p className="comStr_head">{coe.coe.coe_head}</p>
+        <span className="comStr_head">{coe.coe.coe_head}</span>
       </Typography>
     </AccordionSummary>
     <AccordionDetails className="sub-department">
@@ -100,7 +99,7 @@ const CoeDep = (coe) => (
               >
                 <Typography>
                   <strong className="comStr_title">{dep.dep_title}</strong>
-                  <p className="comStr_head">{dep.dep_head}</p>
+                  <span className="comStr_head">{dep.dep_head}</span>
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className="sub-department">
@@ -117,7 +116,7 @@ const CoeDep = (coe) => (
                             <strong className="comStr_title">
                               {div.div_title}
                             </strong>
-                            <p className="comStr_head">{div.div_head}</p>
+                            <span className="comStr_head">{div.div_head}</span>
                           </Typography>
                         </AccordionSummary>
                         <AccordionDetails className="sub-department">
@@ -137,9 +136,9 @@ const CoeDep = (coe) => (
                                       <strong className="comStr_title">
                                         {team.team_title}
                                       </strong>
-                                      <p className="comStr_head">
+                                      <span className="comStr_head">
                                         {team.team_head}
-                                      </p>
+                                      </span>
                                     </Typography>
                                   </AccordionSummary>
                                   <AccordionDetails className="sub-department"></AccordionDetails>
@@ -169,7 +168,6 @@ const CoeDep = (coe) => (
 
 const CompanyDropdown = () => {
   const [departments, setDepartments] = useState(null);
-  const [loading, setLoading] = useState(true);
   // console.log(departments.departments);
 
   const fetchData = async () => {
@@ -183,12 +181,10 @@ const CompanyDropdown = () => {
           },
         }
       );
-      console.log(response.data[0]);
+      // console.log(response.data[0]);
       setDepartments(response.data[0]);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
-      setLoading(false);
     }
   };
   useEffect(() => {
@@ -201,15 +197,21 @@ const CompanyDropdown = () => {
   }
 
   return (
-    <div className="company_dropdown dropdown-container">
+    <div className="dropdown-container">
       <h1>CEO:{departments.ceo}</h1>
-      {departments.departments.map((dep) => {
-        return <DropdownItem department={dep} />;
-      })}
-      {departments.coe.map((coe) => {
-        console.log(coe);
-        return <CoeDep coe={coe} />;
-      })}
+      <div className="company_dropdown">
+        <div>
+          {departments.departments.map((dep) => {
+            // console.log(departments.departments.divisions);
+            return <DropdownItem key={uuidv4()} department={dep} />;
+          })}
+        </div>
+        <div>
+          {departments.coe.map((coe) => {
+            return <CoeDep key={uuidv4()} coe={coe} />;
+          })}
+        </div>
+      </div>
     </div>
   );
 };

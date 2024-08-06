@@ -14,5 +14,6 @@
   "db_ann-new": "Новый",
   "card_course": "Курс",
   "card_department": "Отдел",
-  "card_manage": "Управлять"
+  "card_manage": "Управлять",
+  "filter-btn": "Фильтр"
 }

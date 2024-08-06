@@ -14,5 +14,6 @@
   "db_ann-new": "New",
   "card_department": "Department",
   "card_course": "Courses",
-  "card_manage": "Manage"
+  "card_manage": "Manage",
+  "filter-btn": "Filter"
 }

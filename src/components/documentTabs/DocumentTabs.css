@@ -1,0 +1,74 @@
+.base-TabsList-root{
+  /* display: flex; */
+  /* gap: 10px; */
+  display: inline;
+}
+
+.base-Tab-root{
+  /* width: 300px;   */
+  background: #FAFAFA;
+  border: 0;
+  padding: 8px 15px;
+  border-bottom: 1px solid #A6A6A6;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--secondary-text) !important;
+  cursor: pointer;
+
+}
+
+.base-Tab-root:nth-child(1){
+  border-radius: 5px 0px 0px 0px;
+}
+.base-Tab-root:last-child{
+  border-radius: 0px 5px 0px 0px;
+}
+.docs_tabs-wrapper{
+  background-color: #fff;
+  min-height: 100vh;
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 25px 30px;
+}
+.base--selected{
+  border-bottom: 2px solid #4348CD;
+  box-shadow: 0px -3px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.doc_tab-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.doc_info{
+  display: flex;
+  gap: 20px;
+  color: var(--primary-text, #111827);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.doc-title{
+}
+
+.doc_actions{
+  display: flex;
+  gap: 20px;
+}
+
+.doc_download-icon{
+  color: var(--primary-text);
+  font-size: 30px !important;
+  cursor: pointer;
+}
+.doc_download-icon:hover{
+  color: #030a18;
+}
+
+.doc_del-icon{
+  color: var(--main-red);
+  font-size: 30px !important;
+  cursor: pointer;
+}
+.doc_del-icon:hover{
+  color: #CD090F;
+}

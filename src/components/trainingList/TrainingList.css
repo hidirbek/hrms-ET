@@ -8,38 +8,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.tr-search-add-wrapper{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  text-align: center;
-}
-.search-form{
-  display: flex;
-  text-align: center;
-}
-.search-input{
-  padding: 3px 10px 3px 5px;
-  border-radius: 3px 0px 0px 3px;
-  border: 1px solid #BAB7B7;
-  color: #B3AEAE;
-  font-size: 20px;
-  width: 180px;
-  outline: none;
-}
-.search-btn{
-  padding: 5px 32px;
-  border-radius: 0px 3px 3px 0px;
-  border: none;
-  background-color: var(--main-red);
-  color: var(--white-txt);
-  font-size: 20px;
-  font-weight: 700;
-}
-.search-btn:hover{
-  background-color: #840105;
-  cursor: pointer;
-}
+
 
 .training_list{
   display: grid;

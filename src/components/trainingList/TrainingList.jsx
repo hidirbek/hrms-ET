@@ -2,7 +2,6 @@ import React from "react";
 import "./TrainingList.css";
 import { v4 as uuidv4 } from "uuid";
 import { useTranslation } from "react-i18next";
-
 import { jwtDecode } from "jwt-decode";
 
 const TrainingList = () => {
@@ -35,7 +34,7 @@ const TrainingList = () => {
   ];
   return (
     <div className="training_list-wrapper">
-      <div className="tr-search-add-wrapper">
+      <div className="search-add-wrapper">
         <div>
           {role === "admin" ? (
             <button className="add-btn">{t("add-btn")}</button>

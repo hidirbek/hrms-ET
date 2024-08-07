@@ -1,0 +1,85 @@
+.user_list-wrapper{
+  min-height: 100vh;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+}
+.user_list{
+  display: grid;
+  grid-template-columns: 3% 20% 17% 17% 10% 10% 5% 1fr;
+  padding: 14px 20px;
+  color: var(--primary-text, #111827);
+  font-size: 16px;
+  font-weight: 400;
+  align-items: center;
+  gap: 10px;
+}
+.user_list-headers{
+  background-color: #FAFAFA;
+  color: var(--secondary-text);
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.user_id{
+  /* margin-left: 3px; */
+  margin: auto;
+}
+.user_fullname:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.user_email, .user_dep{
+  font-size: 15px;
+}
+
+.user_tel, .user_div{
+  font-size: 14px;
+}
+
+
+.actions-wrapper{
+  display: flex;
+  gap: 20px;
+  margin-left: 10px;
+}
+
+.del_icon{
+  color: var(--main-red);
+  font-size: 28px !important;
+}
+
+.edit_icon{
+  color: var(--blue-btn);
+  font-size: 28px !important;
+}
+.del_icon:hover{
+  color: #CD090F;
+  cursor: pointer;
+}
+
+.edit_icon:hover{
+  color: #0C5BB7;
+  cursor: pointer;
+}
+
+.online{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--green-btn);
+  margin: auto;
+}
+.offline{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--main-red);
+  margin: auto;
+}
+.user_level{
+  margin-left:5px ;
+}

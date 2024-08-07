@@ -28,6 +28,8 @@
   min-height: 100vh;
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 25px 30px;
+  border-radius: 0 5px 5px 5px;
+
 }
 .base--selected{
   border-bottom: 2px solid #4348CD;

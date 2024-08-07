@@ -8,7 +8,7 @@ const Documents = () => {
     <div>
       <Layout>
         <div className="documents_page-wrapper">
-          <h1 className="docs-title">Documents</h1>
+          <h1 className="page_title docs-title">Documents</h1>
           <div className="">
             <DocumentTabs />
           </div>

@@ -7,7 +7,7 @@ const Company = () => {
   return (
     <Layout>
       <div className="company_pg">
-        <div className="company-title">Company</div>
+        <div className="page_title company-title">Company</div>
         <div className="company_content-wrapper">
           <div className="company_content">
             <div className="">

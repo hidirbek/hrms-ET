@@ -1,0 +1,61 @@
+.employee_list-wrapper{
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+}
+.emp_list{
+  display: grid;
+  grid-template-columns: 5% 20% 20% 20% 18% 1fr;
+  padding: 14px 20px;
+  color: var(--primary-text, #111827);
+  font-size: 16px;
+  font-weight: 400;
+  align-items: center;
+}
+.emp_list-headers{
+  background-color: #FAFAFA;
+  color: var(--secondary-text);
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.emp_id{
+  margin-left: 3px;
+}
+
+.emp_email, .emp_dep{
+  font-size: 15px;
+}
+
+.emp_tel, .emp_div{
+  font-size: 14px;
+}
+
+
+.actions-wrapper{
+  display: flex;
+  gap: 20px;
+
+}
+
+.del_icon{
+  color: var(--main-red);
+  font-size: 28px !important;
+}
+
+.edit_icon{
+  color: var(--blue-btn);
+  font-size: 28px !important;
+}
+.del_icon:hover{
+  color: #CD090F;
+  cursor: pointer;
+}
+
+.edit_icon:hover{
+  color: #0C5BB7;
+  cursor: pointer;
+}

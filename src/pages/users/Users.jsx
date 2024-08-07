@@ -1,11 +1,16 @@
 import React from "react";
 import { Layout } from "../../components";
+import UsersList from "../../components/usersList/UsersList";
+import "./Users.css";
 
 const Users = () => {
   return (
-    <div>
-      <Layout>Users</Layout>
-    </div>
+    <Layout>
+      <div className="users_page-wrapper">
+        <h1 className="page_title">Users</h1>
+        <UsersList />
+      </div>
+    </Layout>
   );
 };
 

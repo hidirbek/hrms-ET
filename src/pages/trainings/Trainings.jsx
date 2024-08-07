@@ -7,7 +7,7 @@ const Trainings = () => {
   return (
     <Layout>
       <div className="training_page-wrapper">
-        <h1 className="training-title">Trainings</h1>
+        <h1 className="page_title training-title">Trainings</h1>
         <TrainingList />
       </div>
     </Layout>

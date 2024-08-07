@@ -7,7 +7,7 @@
 
 .dash_tools-wrapper{
   display: grid;
-  grid-template-columns: 360px 430px 290px;
+  grid-template-columns:2fr 2fr 1fr;
   gap:35px ;
   grid-template-rows: 300px;
 }
@@ -64,9 +64,11 @@
 }
 
 .dash_visitors_statis{
-  width: 430px;
-  height: 300px;
+  /* width: !; */
+  /* height: 300px; */
   padding: 20px 10px ;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -122,7 +124,7 @@
 .nav_cards-wraper{
   margin-top: 33px;
   display: grid;
-  grid-template-columns: repeat(3, 360px);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 35px;
 
 }

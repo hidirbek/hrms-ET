@@ -84,3 +84,9 @@ ul{
   display: flex;
   gap: 15px;
 }
+
+.page_title{
+  color: var(--primary-text, #111827);
+  font-size: 40px;
+  font-weight: 700;
+}

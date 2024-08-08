@@ -7,7 +7,7 @@ import "./Calendar.css";
 
 const localizer = momentLocalizer(moment);
 const allViews = Object.keys(Views).map((k) => Views[k]);
-console.log(allViews);
+// console.log(allViews);
 
 const EventComponent = ({ event }) => {
   return (

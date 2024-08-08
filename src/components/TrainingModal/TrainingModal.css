@@ -1,0 +1,14 @@
+.tr_modal-form{
+  display: flex;
+  gap: 30px;
+}
+
+.react-datetime-picker__calendar{
+  width: auto !important;
+}
+.react-calendar__navigation__arrow{
+  width: 20px !important;
+}
+.date_time-wrapper{
+width: 250px;
+}

@@ -27,20 +27,20 @@
   height: 40px;
 }
 .add-btn{
-  border-radius: 8px;
-  background: var(--main-red, #E31E24);
-  color: var(--white-txt);
-  font-size: 14px;
-  font-weight: 700;
-  padding: 7px 16px;
-  border: 0;
+  border-radius: 8px !important;
+  background: var(--main-red, #E31E24) !important;
+  color: var(--white-txt) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 7px 16px !important;
+  border: 0 !important;
 }
 .add-btn:hover{
-  background-color: #CD090F;
+  background-color: #CD090F !important;
   cursor: pointer;
 }
 .add-btn:focus{
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset !important;
 }
 .announcement-head{
   border-bottom: 1px solid #FAFAFA;

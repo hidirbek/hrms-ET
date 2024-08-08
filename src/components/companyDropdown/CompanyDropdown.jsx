@@ -174,7 +174,7 @@ const CompanyDropdown = () => {
     const token = localStorage.getItem("accessToken");
     try {
       const response = await axios.get(
-        "http://10.30.0.46:4040/v1/company/get_companyStructure",
+        "http://10.30.0.46:4040/v1/company/get_all",
         {
           headers: {
             Authorization: token,

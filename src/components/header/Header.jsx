@@ -137,7 +137,7 @@ const Header = () => {
           <select
             onChange={(e) => changeLanguage(e.target.value)}
             value={language}
-            defaultValue="en"
+            // defaultValue="en"
             className="lang-selector"
           >
             {languages.map((lang) => {

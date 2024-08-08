@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 const BASE_URL = "http://10.30.0.46:4040/v1";
 
 const apiRequest = axios.create({
-  headers: {},
   baseURL: BASE_URL,
+  headers: {},
   params: {},
 });
 

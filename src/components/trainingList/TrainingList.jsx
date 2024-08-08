@@ -12,11 +12,22 @@ const TrainingList = () => {
   const decoded = jwtDecode(token);
   const role = decoded.role;
   const [trainings, setTrainings] = useState(null);
+  const [searchTr, setSearchTr] = useState("");
   const [loading, setLoading] = useState(false);
   // console.log(trainings);
 
-  const searchTraining = (e) => {
+  const searchTraining = async (e) => {
     e.preventDefault();
+    try {
+      // setLoading(true);
+      const response = await apiRequest.get("/trainings/search", {
+        headers: { tr_title: searchTr },
+      });
+      // console.log(response, "resp");
+      setTrainings(response);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
   const deleteTraining = async (id) => {
     // console.log(id);
@@ -63,7 +74,13 @@ const TrainingList = () => {
           ) : null}
         </div>
         <form onSubmit={searchTraining} className="search-form">
-          <input className="search-input" type="text" placeholder="Search" />
+          <input
+            onChange={(e) => setSearchTr(e.target.value)}
+            className="search-input"
+            type="text"
+            placeholder="Search"
+            value={searchTr}
+          />
           <button type="submit" className="search-btn">
             Search
           </button>

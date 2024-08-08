@@ -27,7 +27,7 @@ ul{
   --main-red:#E31E24;
   --blue-btn:#0075FF;
   --green-btn:#006115;
-  -stroke-clr: #E0DDDD;
+  --stroke-clr: #E0DDDD;
   --page-bg: #F4F3F3;
   --white-txt:#fff;
 }
@@ -110,12 +110,13 @@ ul{
   font-size: 16px;
   color: var(--secondary-text);
   outline: none;
+  border: 1px solid var(--stroke-clr);
+  border-radius: 5px;
 }
 .modal_inp-title{
   font-weight: 700;
   font-size: 16px;
   color: var(--primary-text);
-  border: 1px solid var(--stroke-clr)
 }
 .modal_inp-wrapper{
   margin-top: 10px;
@@ -135,6 +136,7 @@ ul{
   margin-left: auto;
   display: block;
   cursor: pointer;
+  margin-top: 10px;
 }
 .modal_save-btn:hover{
   background-color: #0C5BB7;

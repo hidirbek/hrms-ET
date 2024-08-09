@@ -64,14 +64,14 @@
   border-radius: 50%;
   background-color: var(--white-txt);
 }
-.profile_info{
+.hd_profile_info{
   display: flex;
   align-items: center;
   gap: 10px;
   position: relative;
 }
 .user-fn{
-  width: 65px;
+  width: 90px;
 }
 
 .buttons{

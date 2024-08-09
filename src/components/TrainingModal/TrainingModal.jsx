@@ -237,6 +237,7 @@ export const AddTrainingModal = ({ refetchData }) => {
                     name="tr_title"
                     type="text"
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="modal_inp-wrapper">
@@ -246,6 +247,7 @@ export const AddTrainingModal = ({ refetchData }) => {
                     name="department"
                     type="text"
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="modal_inp-wrapper">
@@ -255,6 +257,7 @@ export const AddTrainingModal = ({ refetchData }) => {
                     name="division"
                     type="text"
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="modal_inp-wrapper">
@@ -264,6 +267,7 @@ export const AddTrainingModal = ({ refetchData }) => {
                     name="floor"
                     type="text"
                     onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -277,6 +281,7 @@ export const AddTrainingModal = ({ refetchData }) => {
                   minDate={new Date(2024, 0, 1)}
                   // maxDate={new Date(2024, 11, 31)}
                   locale="uz"
+                  required
                   // onChange={handleChange}
                 />
               </div>

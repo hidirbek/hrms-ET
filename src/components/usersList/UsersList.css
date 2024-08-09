@@ -83,3 +83,71 @@
 .user_level{
   margin-left:5px ;
 }
+
+.user_card-wrapper{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.user_card-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user_card-content:nth-child(3){
+  align-self: flex-start;
+}
+
+.user_img-wrapper{
+  width: 270px;
+  height: 270px;
+  background-color: dimgrey;
+  border-radius: 50%;
+}
+
+.user_status{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-text);
+  width: 170px;
+  height: 30px;
+  border-radius: 3px;
+  background: #FFF;
+
+}
+
+.MuiDialog-paper{
+  max-width: none !important;
+  padding: 20px !important;
+}
+
+.user_card_fn{
+  color: var(--primary-text, #111827);
+  font-family: Circe;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.user_card-headings{
+  color: var(--primary-text, #111827);
+  font-weight: 700;
+}
+
+.user_card-info{
+  color: var(--secondary-text, #687588);
+  font-size: 16px;
+  font-weight: 700;
+}
+.user_card-status-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card-title{
+  text-align: center;
+  color: var(--primary-text, #111827) !important;
+  font-size: 40px !important;
+  font-weight: 700 !important;
+}

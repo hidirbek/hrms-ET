@@ -92,7 +92,7 @@ const TrainingList = () => {
         <div className="">Department</div>
         <div className="">Floor</div>
         <div className="">Time</div>
-        <div className="">Actions</div>
+        {role === "admin" && "hr" ? <div className="">Actions</div> : null}
       </div>
       {trainings?.map((train) => {
         const convertedTime = dayjs(train.time).format("DD.MM.YYYY HH:mm");
@@ -106,24 +106,26 @@ const TrainingList = () => {
             </div>
             <div className="tr_floor">{train.floor}</div>
             <div className="tr_time">{convertedTime}</div>
-            <div className="tr_actions">
-              <TrainingEditModal
-                id={train.id}
-                tr_title={train.tr_title}
-                department={train.department}
-                division={train.division}
-                time={train.time}
-                floor={train.floor}
-                refetchData={getTrainings}
-              />
-              {/* <button className="edit_btn">Edit</button> */}
-              <button
-                onClick={() => deleteTraining(train.id)}
-                className="del_btn"
-              >
-                Delete
-              </button>
-            </div>
+            {role === "admin" && "hr" ? (
+              <div className="tr_actions">
+                <TrainingEditModal
+                  id={train.id}
+                  tr_title={train.tr_title}
+                  department={train.department}
+                  division={train.division}
+                  time={train.time}
+                  floor={train.floor}
+                  refetchData={getTrainings}
+                />
+                {/* <button className="edit_btn">Edit</button> */}
+                <button
+                  onClick={() => deleteTraining(train.id)}
+                  className="del_btn"
+                >
+                  Delete
+                </button>
+              </div>
+            ) : null}
           </div>
         );
       })}

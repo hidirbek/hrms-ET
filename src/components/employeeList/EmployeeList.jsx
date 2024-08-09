@@ -102,7 +102,7 @@ const EmployeeList = () => {
           <div>Contacts</div>
           <div>Departmnent</div>
           <div>Job Title</div>
-          <div>Actions</div>
+          {role === "admin" && "hr" ? <div>Actions</div> : null}
         </div>
         {employees.map((emp) => {
           return (
@@ -118,31 +118,33 @@ const EmployeeList = () => {
                 <p className="emp_div">{emp.division}</p>
               </div>
               <div>{emp.job_title}</div>
-              <div className="actions-wrapper">
-                <EditEmployeeModal
-                  id={emp.id}
-                  fullname={emp.fullname}
-                  tel={emp.tel}
-                  d_birth={emp.d_birth}
-                  gender={emp.gender}
-                  nation={emp.nation}
-                  marriage={emp.marriage}
-                  work_tel={emp.work_tel}
-                  address={emp.address}
-                  city={emp.city}
-                  country={emp.country}
-                  email={emp.email}
-                  job_title={emp.job_title}
-                  department={emp.department}
-                  emp_status={emp.emp_status}
-                  division={emp.division}
-                  refetchData={getEmployees}
-                />
-                <DeleteOutlineIcon
-                  onClick={() => deleteEmployee(emp.id)}
-                  className="del_icon"
-                />
-              </div>
+              {role === "admin" && "hr" ? (
+                <div className="actions-wrapper">
+                  <EditEmployeeModal
+                    id={emp.id}
+                    fullname={emp.fullname}
+                    tel={emp.tel}
+                    d_birth={emp.d_birth}
+                    gender={emp.gender}
+                    nation={emp.nation}
+                    marriage={emp.marriage}
+                    work_tel={emp.work_tel}
+                    address={emp.address}
+                    city={emp.city}
+                    country={emp.country}
+                    email={emp.email}
+                    job_title={emp.job_title}
+                    department={emp.department}
+                    emp_status={emp.emp_status}
+                    division={emp.division}
+                    refetchData={getEmployees}
+                  />
+                  <DeleteOutlineIcon
+                    onClick={() => deleteEmployee(emp.id)}
+                    className="del_icon"
+                  />
+                </div>
+              ) : null}
             </div>
           );
         })}

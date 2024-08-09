@@ -111,7 +111,9 @@ export default function DocumentTabs() {
                 </div>
                 <div className="doc_actions">
                   <SimCardDownloadIcon className="doc_download-icon" />
-                  <DeleteOutlineIcon className="doc_del-icon" />
+                  {role === "admin" && "hr" ? (
+                    <DeleteOutlineIcon className="doc_del-icon" />
+                  ) : null}
                 </div>
               </div>
             </TabPanel>

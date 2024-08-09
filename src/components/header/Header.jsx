@@ -21,7 +21,7 @@ const Header = () => {
   const handleClickProfile = () => {
     setShowButtons(!showButtons);
   };
-  // console.log(userInfo);
+  // console.log(userInfo.fullname);
 
   const logout = () => {
     AuthService.logout();
@@ -153,14 +153,16 @@ const Header = () => {
             })}
           </select>
         </div>
-        <div className="profile_info" onClick={handleClickProfile}>
+        <div className="hd_profile_info" onClick={handleClickProfile}>
           <div className="user-img"></div>
           <div className="user-fn">
-            <p className="user-name">{userInfo}</p>
+            <p className="user-name">
+              {userInfo.fullname ? userInfo.fullname : "loading..."}
+            </p>
           </div>
           {showButtons && (
             <div className="buttons">
-              <NavLink to="/v1/profile/:id">{t("hd_profile")}</NavLink>
+              <NavLink to="/v1/profile">{t("hd_profile")}</NavLink>
               <NavLink to="/v1/login" onClick={logout}>
                 {t("hd_logout")}
               </NavLink>

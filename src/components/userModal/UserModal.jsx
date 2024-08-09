@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import EditIcon from "@mui/icons-material/Edit";
-import "./EmployeeModal.css";
+// import "./EmployeeModal.css";
 import apiRequest from "../../service/request";
 
 const style = {
@@ -22,7 +22,7 @@ const style = {
   p: 4,
 };
 
-export const EditEmployeeModal = ({
+export const EditUserModal = ({
   id,
   fullname,
   tel,
@@ -39,6 +39,9 @@ export const EditEmployeeModal = ({
   department,
   emp_status,
   division,
+  username,
+  password,
+  role,
   refetchData,
 }) => {
   const [formData, setFormData] = useState({
@@ -57,6 +60,9 @@ export const EditEmployeeModal = ({
     department: department,
     emp_status: emp_status,
     division: division,
+    username: username,
+    password: password,
+    role: role,
   });
   const [open, setOpen] = useState(false);
   // console.log(time);
@@ -78,6 +84,9 @@ export const EditEmployeeModal = ({
       department: department,
       emp_status: emp_status,
       division: division,
+      username: username,
+      password: password,
+      role: role,
     });
   }, [
     fullname,
@@ -95,6 +104,9 @@ export const EditEmployeeModal = ({
     department,
     emp_status,
     division,
+    username,
+    password,
+    role,
   ]);
 
   const handleOpen = () => setOpen(true);
@@ -109,7 +121,7 @@ export const EditEmployeeModal = ({
   };
 
   const handleSubmit = async () => {
-    const response = await apiRequest.put(`/employees/edit/${id}`, formData);
+    const response = await apiRequest.put(`/users/edit/${id}`, formData);
     alert(response.message);
 
     handleClose();
@@ -136,7 +148,7 @@ export const EditEmployeeModal = ({
       >
         <Fade in={open}>
           <Box sx={style} className="site_modal">
-            <h1 className="modal_title">Edit Employee</h1>
+            <h1 className="modal_title">Edit User</h1>
             <form className="emp_modal-form">
               <div>
                 <div className="modal_inp-wrapper">
@@ -189,8 +201,6 @@ export const EditEmployeeModal = ({
                     onChange={handleChange}
                   />
                 </div>
-              </div>
-              <div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Marital Status</span>
                   <input
@@ -201,6 +211,8 @@ export const EditEmployeeModal = ({
                     onChange={handleChange}
                   />
                 </div>
+              </div>
+              <div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Work Phone</span>
                   <input
@@ -241,8 +253,6 @@ export const EditEmployeeModal = ({
                     onChange={handleChange}
                   />
                 </div>
-              </div>
-              <div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Country</span>
                   <input
@@ -263,6 +273,8 @@ export const EditEmployeeModal = ({
                     onChange={handleChange}
                   />
                 </div>
+              </div>
+              <div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Job Title</span>
                   <input
@@ -293,6 +305,36 @@ export const EditEmployeeModal = ({
                     onChange={handleChange}
                   />
                 </div>
+                <div className="modal_inp-wrapper">
+                  <span className="modal_inp-title">Username</span>
+                  <input
+                    className="modal_input"
+                    name="username"
+                    type="text"
+                    value={formData.username}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="modal_inp-wrapper">
+                  <span className="modal_inp-title">User role</span>
+                  <input
+                    className="modal_input"
+                    name="role"
+                    type="text"
+                    value={formData.role}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="modal_inp-wrapper">
+                  <span className="modal_inp-title">Password</span>
+                  <input
+                    className="modal_input"
+                    name="password"
+                    type="text"
+                    value={formData.password}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
             </form>
             <button className="modal_save-btn" onClick={handleSubmit}>
@@ -305,7 +347,7 @@ export const EditEmployeeModal = ({
   );
 };
 
-export const AddEmployeeModal = ({ refetchData }) => {
+export const AddUserModal = ({ refetchData }) => {
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState();
@@ -323,7 +365,9 @@ export const AddEmployeeModal = ({ refetchData }) => {
   };
 
   const handleSubmit = async () => {
-    const response = await apiRequest.post(`/employees/create`, formData);
+    // console.log(formData, "data");
+
+    const response = await apiRequest.post(`/users/create`, formData);
     alert(response.message);
 
     refetchData();
@@ -350,17 +394,17 @@ export const AddEmployeeModal = ({ refetchData }) => {
       >
         <Fade in={open}>
           <Box sx={style} className="site_modal">
-            <h1 className="modal_title">Add Employee</h1>
+            <h1 className="modal_title">Add User</h1>
             <form onSubmit={handleSubmit}>
               <div className="emp_modal-form">
                 <div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Fullname</span>
                     <input
+                      required
                       className="modal_input"
                       name="fullname"
                       type="text"
-                      required
                       onChange={handleChange}
                     />
                   </div>
@@ -370,8 +414,8 @@ export const AddEmployeeModal = ({ refetchData }) => {
                       className="modal_input"
                       name="tel"
                       type="text"
-                      required
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="modal_inp-wrapper">
@@ -404,8 +448,6 @@ export const AddEmployeeModal = ({ refetchData }) => {
                       required
                     />
                   </div>
-                </div>
-                <div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Marital Status</span>
                     <input
@@ -416,6 +458,8 @@ export const AddEmployeeModal = ({ refetchData }) => {
                       required
                     />
                   </div>
+                </div>
+                <div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Work Phone</span>
                     <input
@@ -456,8 +500,6 @@ export const AddEmployeeModal = ({ refetchData }) => {
                       required
                     />
                   </div>
-                </div>
-                <div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Country</span>
                     <input
@@ -473,11 +515,13 @@ export const AddEmployeeModal = ({ refetchData }) => {
                     <input
                       className="modal_input"
                       name="email"
-                      type="mail"
+                      type="text"
                       onChange={handleChange}
                       required
                     />
                   </div>
+                </div>
+                <div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Job Title</span>
                     <input
@@ -503,6 +547,36 @@ export const AddEmployeeModal = ({ refetchData }) => {
                     <input
                       className="modal_input"
                       name="division"
+                      type="text"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="modal_inp-wrapper">
+                    <span className="modal_inp-title">Username</span>
+                    <input
+                      className="modal_input"
+                      name="username"
+                      type="text"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="modal_inp-wrapper">
+                    <span className="modal_inp-title">User role</span>
+                    <input
+                      className="modal_input"
+                      name="role"
+                      type="text"
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="modal_inp-wrapper">
+                    <span className="modal_inp-title">Password</span>
+                    <input
+                      className="modal_input"
+                      name="password"
                       type="text"
                       onChange={handleChange}
                       required

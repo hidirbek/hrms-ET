@@ -85,10 +85,10 @@ export default function DocumentTabs() {
             ) : null}
           </div>
           <div className="filter_search-wrp">
-            <div className="filter-wrapper">
+            {/* <div className="filter-wrapper">
               {t("filter-btn")}
               <FilterAltIcon className="filter_icon" />
-            </div>
+            </div> */}
             <form onSubmit={searchTraining} className="search-form">
               <input
                 className="search-input"

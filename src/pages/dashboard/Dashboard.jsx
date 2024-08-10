@@ -1,12 +1,14 @@
 import React from "react";
 import { Layout } from "../../components";
-import LineChart from "../../components/chart/Chart";
+import VisitorsChart from "../../components/chart/VisitorsChart";
 import "./Dashboard.css";
 import Calendar from "../../components/calendar/Calendar";
 import Announcement from "../../components/announcements/Announcement";
 import { useTranslation } from "react-i18next";
 import Card from "../../components/db_cards/Card";
+import PerformanceChart from "../../components/chart/PerformanceChart";
 import { v4 as uuidv4 } from "uuid";
+import GaugeChart from "react-gauge-chart";
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -129,10 +131,28 @@ const Dashboard = () => {
             <div className="dash_tools-wrapper">
               <Announcement />
               <div className="dash_visitors_statis">
-                <LineChart />
+                <VisitorsChart />
               </div>
               <div className="dash_calendar">
                 <Calendar />
+              </div>
+            </div>
+            <div className="performance_chart-wrapper">
+              <h2>User Performance</h2>
+              <div className="perform_charts">
+                <GaugeChart
+                  className="performance_meter"
+                  id="gauge-chart"
+                  nrOfLevels={6}
+                  colors={["#f0f0f0", "#3eaee2"]}
+                  arcWidth={0.3}
+                  percent={0.8}
+                  textColor="#000"
+                  formatTextValue={() => ""}
+                />
+                <div className="performance_chart">
+                  <PerformanceChart />
+                </div>
               </div>
             </div>
             <div className="nav_cards-wraper">

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://10.30.0.46:4040/v1/auth/";
+const API_URL = "https://hrms-et-back.vercel.app/v1/auth";
 
 const register = (username, password) => {
   return axios.post(`${API_URL}/register`, { username, password });

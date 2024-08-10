@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./CompanyDropdown.css";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import apiRequest from "../../service/request";
 
 const DropdownItem = (department) => (
   <Accordion className="first_column">
@@ -168,21 +168,11 @@ const CoeDep = (coe) => (
 
 const CompanyDropdown = () => {
   const [departments, setDepartments] = useState(null);
-  // console.log(departments.departments);
 
   const fetchData = async () => {
-    const token = localStorage.getItem("accessToken");
     try {
-      const response = await axios.get(
-        "http://10.30.0.46:4040/v1/company/get_all",
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
-      );
-      // console.log(response.data[0]);
-      setDepartments(response.data[0]);
+      const response = await apiRequest.get("/company/get_all");
+      setDepartments(response[0]);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -201,15 +191,17 @@ const CompanyDropdown = () => {
       <h1>CEO:{departments.ceo}</h1>
       <div className="company_dropdown">
         <div>
-          {departments.departments.map((dep) => {
-            // console.log(departments.departments.divisions);
-            return <DropdownItem key={uuidv4()} department={dep} />;
-          })}
+          {departments &&
+            departments.departments.map((dep) => {
+              // console.log(departments.departments.divisions);
+              return <DropdownItem key={uuidv4()} department={dep} />;
+            })}
         </div>
         <div>
-          {departments.coe.map((coe) => {
-            return <CoeDep key={uuidv4()} coe={coe} />;
-          })}
+          {departments &&
+            departments.coe.map((coe) => {
+              return <CoeDep key={uuidv4()} coe={coe} />;
+            })}
         </div>
       </div>
     </div>

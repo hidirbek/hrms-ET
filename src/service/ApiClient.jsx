@@ -2,7 +2,7 @@ import axios from "axios";
 import authService from "./AuthService";
 
 const apiClient = axios.create({
-  baseURL: "http://10.30.0.46:4040/v1/auth/",
+  baseURL: "https://hrms-et-back.vercel.app/v1/auth",
 });
 
 apiClient.interceptors.request.use(

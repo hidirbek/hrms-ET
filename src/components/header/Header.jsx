@@ -11,35 +11,33 @@ import { v4 as uuidv4 } from "uuid";
 import { useLanguage } from "../../components/languageSelector/LanguageContext";
 import { useTranslation } from "react-i18next";
 import AuthService from "../../service/AuthService";
+import apiRequest from "../../service/request";
 
 const Header = () => {
   const { t } = useTranslation();
   const [userInfo, setUserInfo] = useState("");
+  // console.log(userInfo.fullname);
 
   const [showButtons, setShowButtons] = useState(false);
 
   const handleClickProfile = () => {
     setShowButtons(!showButtons);
   };
-  // console.log(userInfo.fullname);
 
   const logout = () => {
     AuthService.logout();
   };
-  const fetchUserInfo = () => {
+  const fetchUserInfo = async () => {
     const token = localStorage.getItem("accessToken");
     const decoded = jwtDecode(token);
     const userId = decoded.id;
 
-    axios
-      .get(`http://10.30.0.46:4040/v1/users/get_user/${userId}`, {
-        headers: {
-          Authorization: token,
-        },
-      })
-      .then((response) => {
-        setUserInfo(response.data);
-      });
+    try {
+      const response = await apiRequest.get(`/users/get_user/${userId}`);
+      setUserInfo(response.fullname);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {
@@ -156,9 +154,7 @@ const Header = () => {
         <div className="hd_profile_info" onClick={handleClickProfile}>
           <div className="user-img"></div>
           <div className="user-fn">
-            <p className="user-name">
-              {userInfo.fullname ? userInfo.fullname : "loading..."}
-            </p>
+            <p className="user-name">{userInfo && userInfo}</p>
           </div>
           {showButtons && (
             <div className="buttons">

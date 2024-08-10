@@ -66,6 +66,7 @@ const UsersList = () => {
   }, []);
 
   const deleteUser = async (id) => {
+    console.log(id);
     const response = await apiRequest.delete(`/users/delete/${id}`);
     alert(response.message);
 

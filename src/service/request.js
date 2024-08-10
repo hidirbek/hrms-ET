@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://10.30.0.46:4040/v1";
+const BASE_URL = "https://hrms-et-back.vercel.app/v1";
 
 const apiRequest = axios.create({
   baseURL: BASE_URL,
@@ -29,8 +29,6 @@ apiRequest.interceptors.response.use(
       navigate("/v1/login");
     } else if (err.message === "Network Error") {
       console.log("Network Error");
-    } else {
-      console.log("Network error 2");
     }
     return Promise.reject(err);
   }

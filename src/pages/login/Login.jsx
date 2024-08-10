@@ -31,30 +31,6 @@ const Login = () => {
     } catch (error) {
       alert("Login failed: " + error.response.data.message);
     }
-    // e.preventDefault();
-    // try {
-    //   const response = await axios.post(
-    //     "http://10.30.0.46:4040/v1/auth/login",
-    //     {
-    //       username,
-    //       password,
-    //     }
-    //   );
-    //   // console.log(response.data);
-
-    //   const { token } = response.data;
-    //   localStorage.setItem("token", token);
-    //   if (localStorage.getItem("token")) {
-    //     navigate("/v1/dashboard");
-    //   } else {
-    //     alert("Token not available!");
-    //     navigate("/v1/login");
-    //   }
-    // } catch (err) {
-    //   alert("Invalid username or password");
-    //   setUsername("");
-    //   setPassword("");
-    // }
   };
   return (
     <div className="login-main">

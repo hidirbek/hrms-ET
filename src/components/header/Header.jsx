@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { useLanguage } from "../../components/languageSelector/LanguageContext";
 import { useTranslation } from "react-i18next";
@@ -79,9 +78,14 @@ const Header = () => {
   // const changeLanguage = (lng) => {
   //   // i18n.changeLanguage(lng);
   // };
+
+  const navigate = useNavigate();
+  const logoNav = () => {
+    navigate("/v1/dashboard");
+  };
   return (
     <header className="site-header">
-      <div className="site_logo-wrapper">
+      <div onClick={logoNav} className="site_logo-wrapper">
         <div className="site-logo">
           <img
             src={`${process.env.PUBLIC_URL}/logo.png`}

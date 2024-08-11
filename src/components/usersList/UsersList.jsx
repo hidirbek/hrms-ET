@@ -5,23 +5,35 @@ import { v4 as uuidv4 } from "uuid";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { AddUserModal, EditUserModal } from "../userModal/UserModal";
 import apiRequest from "../../service/request";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
+import Popper from "@mui/material/Popper";
+import { useTranslation } from "react-i18next";
 
 const UsersList = () => {
   const token = localStorage.getItem("accessToken");
   const decoded = jwtDecode(token);
   const role = decoded.role;
+  const { t } = useTranslation();
 
   const [users, setUsers] = useState(null);
   const [searchValue, setSearchValue] = useState("");
 
   const [open, setOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const openFilter = Boolean(anchorEl);
+  const id = open ? "simple-popper" : undefined;
+  const handleClickFilter = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
 
   const handleClickOpen = (user) => {
     setSelectedUser(user);
@@ -66,7 +78,7 @@ const UsersList = () => {
   }, []);
 
   const deleteUser = async (id) => {
-    console.log(id);
+    // console.log(id);
     const response = await apiRequest.delete(`/users/delete/${id}`);
     alert(response.message);
 
@@ -90,19 +102,41 @@ const UsersList = () => {
         <div>
           {role === "admin" ? <AddUserModal refetchData={getUsers} /> : null}
         </div>
-        <form onSubmit={searchUser} className="search-form">
-          <input
-            name="user_search"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            className="search-input"
-            type="text"
-            placeholder="Search"
-          />
-          <button type="submit" className="search-btn">
-            Search
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button
+            aria-describedby={id}
+            type="button"
+            onClick={handleClickFilter}
+            className="filter-wrapper"
+          >
+            {t("filter-btn")}
+            <FilterAltIcon className="filter_icon" />
           </button>
-        </form>
+          <Popper
+            className="filter_poper"
+            id={id}
+            open={openFilter}
+            anchorEl={anchorEl}
+          >
+            <button className="filter_btns">Department1</button>
+            <button className="filter_btns">Department2</button>
+            <button className="filter_btns">Department3</button>
+            <button className="filter_btns">Department4</button>
+          </Popper>
+          <form onSubmit={searchUser} className="search-form">
+            <input
+              name="user_search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              className="search-input"
+              type="text"
+              placeholder="Search"
+            />
+            <button type="submit" className="search-btn">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
       <div className="user_list-content">
         <div className="user_list-headers user_list">

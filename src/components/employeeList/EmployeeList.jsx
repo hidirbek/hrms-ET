@@ -7,22 +7,32 @@ import {
   EditEmployeeModal,
   AddEmployeeModal,
 } from "../employeeModal/EmployeeModal";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import Popper from "@mui/material/Popper";
+import { useTranslation } from "react-i18next";
 
 import apiRequest from "../../service/request";
 
 const EmployeeList = () => {
+  const { t } = useTranslation();
+
   const token = localStorage.getItem("accessToken");
   const decoded = jwtDecode(token);
   const role = decoded.role;
 
   const [employees, setEmployees] = useState(null);
   const [searchValue, setSearchValue] = useState("");
-  // console.log(employees);
-  // console.log(searchValue);
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const openFilter = Boolean(anchorEl);
+  const id = "open" ? "simple-popper" : undefined;
+  const handleClickFilter = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
 
   const searchEmployee = async (e) => {
     e.preventDefault();
-    // console.log(e.target.value);
 
     try {
       // setLoading(true);
@@ -81,19 +91,41 @@ const EmployeeList = () => {
             <AddEmployeeModal refetchData={getEmployees} />
           ) : null}
         </div>
-        <form onSubmit={searchEmployee} className="search-form">
-          <input
-            name="emp_search"
-            value={searchValue}
-            className="search-input"
-            type="text"
-            placeholder="Search"
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-          <button type="submit" className="search-btn">
-            Search
+        <div style={{ display: "flex", gap: "10px" }}>
+          <button
+            aria-describedby={id}
+            type="button"
+            onClick={handleClickFilter}
+            className="filter-wrapper"
+          >
+            {t("filter-btn")}
+            <FilterAltIcon className="filter_icon" />
           </button>
-        </form>
+          <Popper
+            className="filter_poper"
+            id={id}
+            open={openFilter}
+            anchorEl={anchorEl}
+          >
+            <button className="filter_btns">Department1</button>
+            <button className="filter_btns">Department2</button>
+            <button className="filter_btns">Department3</button>
+            <button className="filter_btns">Department4</button>
+          </Popper>
+          <form onSubmit={searchEmployee} className="search-form">
+            <input
+              name="emp_search"
+              value={searchValue}
+              className="search-input"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <button type="submit" className="search-btn">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
       <div className="emp_list-content">
         <div className="emp_list-headers emp_list">

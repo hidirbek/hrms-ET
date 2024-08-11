@@ -94,36 +94,40 @@ const Announcement = () => {
           <form onSubmit={handleSubmit} action="">
             <DialogContent>
               <div className="">
-                <div>
+                <div className="modal_inp-wrapper">
                   <span>Announcement Title</span>
                   <input
                     required
                     name="name"
                     type="text"
                     onChange={handleChange}
+                    className="modal_input"
                   />
                 </div>
-                <div>
+                <div className="modal_inp-wrapper">
                   <span>Announcement Description</span>
                   <input
+                    className="modal_input"
                     required
                     name="description"
                     type="text"
                     onChange={handleChange}
                   />
                 </div>
-                <div>
+                <div className="modal_inp-wrapper">
                   <span>Select Start Date</span>
                   <input
+                    className="modal_input"
                     name="start"
                     required
                     type="date"
                     onChange={handleChange}
                   />
                 </div>
-                <div>
+                <div className="modal_inp-wrapper">
                   <span>Select End Date</span>
                   <input
+                    className="modal_input"
                     name="end"
                     required
                     type="date"

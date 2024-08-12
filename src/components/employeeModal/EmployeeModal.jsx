@@ -322,7 +322,10 @@ export const AddEmployeeModal = ({ refetchData }) => {
     }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // console.log(formData);
+
     const response = await apiRequest.post(`/employees/create`, formData);
     alert(response.message);
 

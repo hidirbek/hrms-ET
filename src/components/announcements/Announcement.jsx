@@ -47,7 +47,10 @@ const Announcement = () => {
     getAnnouncements();
   }, []);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+
     const response = await apiRequest.post(`/events/create`, formData);
     alert(response.message);
 

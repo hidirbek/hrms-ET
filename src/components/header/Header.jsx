@@ -12,6 +12,8 @@ import { useTranslation } from "react-i18next";
 import AuthService from "../../service/AuthService";
 import apiRequest from "../../service/request";
 
+import logoImg from "../../assets/logo.png";
+
 const Header = () => {
   const { t } = useTranslation();
   const [userInfo, setUserInfo] = useState("");
@@ -87,11 +89,7 @@ const Header = () => {
     <header className="site-header">
       <div onClick={logoNav} className="site_logo-wrapper">
         <div className="site-logo">
-          <img
-            src={`${process.env.PUBLIC_URL}/logo.png`}
-            alt="Site Logo"
-            className="site-logo"
-          />
+          <img src={logoImg} alt="Site Logo" className="site-logo" />
         </div>
         <div className="logo_name">
           East <span>Telecom</span>

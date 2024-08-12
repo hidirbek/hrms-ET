@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 // const BASE_URL = "https://hrms-et-back.vercel.app/v1";
 // const BASE_URL = "http://localhost:4040/v1/";
-const BASE_URL = "http://10.30.0.46:4040//v1/";
+const BASE_URL = "http://10.30.0.46:4040/v1/";
 
 const apiRequest = axios.create({
   baseURL: BASE_URL,

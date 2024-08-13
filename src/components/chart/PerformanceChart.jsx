@@ -37,7 +37,7 @@ const PerformanceChart = () => {
     ],
     datasets: [
       {
-        label: "Productivity",
+        label: "Hard Skills",
         data: [30, 40, 50, 70, 90, 80, 70, 90, 100, 50, 60, 80],
         borderColor: "rgba(248, 249, 66)",
         backgroundColor: "rgba(255, 0, 0, 0.8)",
@@ -45,7 +45,7 @@ const PerformanceChart = () => {
         tension: 0.3,
       },
       {
-        label: "Quality of Work",
+        label: "Soft Skills",
         data: [50, 55, 60, 65, 70, 30, 40, 50, 70, 90, 80, 70],
         borderColor: "rgba(66, 137, 249)",
         backgroundColor: "rgba(66, 137, 249)",

@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 
@@ -86,6 +87,16 @@
   background-color:var(--main-red);
   cursor: pointer;
 }
+
+.fg_psw-title{
+  font-size: 20px;
+}
+.forget-password-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .passw-icon{
   /* margin:12px 0 0 -40px; */
   position: absolute;
@@ -95,4 +106,18 @@
 .passw-wrp{
   position: relative;
   display: flex;
+}
+
+.forget_passw_link{
+  color: var(--main-red);
+  text-decoration: none;
+
+}
+
+.forget-password-main{
+  gap: 20px;
+}
+
+.forget_passw_link:hover{
+  text-decoration: underline;
 }

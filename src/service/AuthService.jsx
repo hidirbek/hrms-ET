@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "https://hrms-et-back.vercel.app/v1/auth";
+// const API_URL = "https://hrms-et-back.vercel.app/v1/auth";
+const API_URL = "http://10.30.0.46:4040/v1/auth";
 
 const register = (username, password) => {
   return axios.post(`${API_URL}/register`, { username, password });
@@ -42,6 +43,24 @@ const refreshToken = () => {
     });
 };
 
+const sendEmailResetCode = (email) => {
+  return axios.post(`${API_URL}/send-reset-code`, { email });
+};
+// Function to send the reset code to the user's email
+
+const verifyResetCode = (email, code) => {
+  return axios.post(`${API_URL}/verify-reset-code`, { email, code });
+};
+// Function to verify the confirmation code
+
+const resetPassword = (email, newPassword) => {
+  return axios.post(`${API_URL}/reset-password`, {
+    email,
+    password: newPassword,
+  });
+};
+// Function to reset the password
+
 const AuthService = {
   register,
   login,
@@ -49,5 +68,8 @@ const AuthService = {
   getAccessToken,
   getRefreshToken,
   refreshToken,
+  sendEmailResetCode,
+  verifyResetCode,
+  resetPassword,
 };
 export default AuthService;

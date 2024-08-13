@@ -211,7 +211,7 @@ const UsersList = () => {
 
       {selectedUser && (
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle className="card-title">User Card</DialogTitle>
+          <DialogTitle className="user_card-title">User Card</DialogTitle>
           <DialogContent>
             <div className="user_card-wrapper">
               <div className="user_img-wrapper">

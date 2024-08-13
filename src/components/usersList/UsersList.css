@@ -145,7 +145,7 @@
   flex-direction: column;
   gap: 10px;
 }
-.card-title{
+.user_card-title{
   text-align: center;
   color: var(--primary-text, #111827) !important;
   font-size: 40px !important;

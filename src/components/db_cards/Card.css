@@ -1,21 +1,20 @@
 .red{
-  background: linear-gradient(180deg, #FC8F88 86%, #770700 87%);
+  background: linear-gradient(90deg, #ff0a6c 0%, #2d27ff 100%);
 }
 .blue{
-  background: linear-gradient(180deg, #BEDCFF 86%, #001834 87%);
+  background: linear-gradient(90deg, #005eff 0%, #1200ff 100%);
 }
 
 .light_blue{
-  background: linear-gradient(180deg, #8DF8FF 86%, #006268 87%);
+  background: linear-gradient(90deg, #39BCF8 0%, #6365F1 100%);
 
 }
 .purple{
-  background: linear-gradient(180deg, #EC79FF
-  86%, #9500AD 87%);
+  background: linear-gradient(90deg, #49DD81 0%, #22B4C6 100%);
 
 }
 .yellow{
-  background: linear-gradient(180deg, #E4FF79 86%, #9FAD00 87%);
+  background: linear-gradient(90deg, #A855F7 0%, #6366F1 100%);
 
 }
 
@@ -28,6 +27,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.db_cards-wrapper:hover{
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .card_link{
@@ -46,17 +49,21 @@
 .card_content{
   display: flex;
   justify-content: space-between;
-  color: var(--primary-text);
+  /* color: var(--primary-text); */
+}
+.card_title-wrapper{
+  color: #fff !important;
+
 }
 .card_icon-wrapper svg{
   width: 100px;
   height: 100px;
   opacity: 80%;
+  fill: #fff;
 }
 
 .card-title{
   font-size: 32px;
-
   font-weight: 700;
 }
 .card-subtitle{

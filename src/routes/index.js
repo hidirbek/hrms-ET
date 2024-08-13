@@ -10,6 +10,7 @@ import Employee from "../pages/employee/Employee";
 import Documents from "../pages/documents/Documents";
 import Trainings from "../pages/trainings/Trainings";
 import Profile from "../pages/profile/Profile";
+import ForgetPassword from "../pages/forgetPassword/ForgetPassword";
 
 const index = () => {
   return (
@@ -25,6 +26,7 @@ const index = () => {
         <Route path="/v1/users" element={<Users />} />
         <Route path="/v1/trainings" element={<Trainings />} />
         <Route path="/v1/profile" element={<Profile />} />
+        <Route path="/v1/forget_password" element={<ForgetPassword />} />
       </Routes>
     </>
   );

@@ -1,5 +1,5 @@
 import React, { /*useRef,*/ useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 import AuthService from "../../service/AuthService";
 
@@ -66,7 +66,12 @@ const Login = () => {
             required
             onChange={(e) => setUsername(e.target.value)}
           />
-          <span>Password</span>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <span>Password</span>
+            <Link className="forget_passw_link" to="/v1/forget_password">
+              Forget Password?
+            </Link>
+          </div>
           <div className="passw-wrp">
             <input
               className="inp"

@@ -148,7 +148,7 @@ const Company = () => {
                     <input
                       name="dep_name"
                       className="modal_input"
-                      placeholder="Add Department"
+                      placeholder="Add Division"
                       type="text"
                     />
                   </div>

@@ -17,12 +17,17 @@ import logoImg from "../../assets/logo.png";
 const Header = () => {
   const { t } = useTranslation();
   const [userInfo, setUserInfo] = useState("");
+  const [notifications, setNotifications] = useState("");
   // console.log(userInfo.fullname);
 
   const [showButtons, setShowButtons] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   const handleClickProfile = () => {
     setShowButtons(!showButtons);
+  };
+  const handleClickNotifications = () => {
+    setShowNotifications(!showNotifications);
   };
 
   const logout = () => {
@@ -40,9 +45,18 @@ const Header = () => {
       console.error("Error fetching data:", error);
     }
   };
+  const b_days = async () => {
+    try {
+      const response = await apiRequest.get("/notifications");
+      setNotifications(response);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   useEffect(() => {
     fetchUserInfo();
+    b_days();
   }, []);
 
   const messages = [
@@ -101,22 +115,22 @@ const Header = () => {
             className="ring-icon"
             aria-describedby={id}
             type="button"
-            onClick={handleClick}
+            onClick={handleClickNotifications}
           >
             <NotificationsIcon className="ring-icon" />
           </button>
-          <Popper id={id} open={open} anchorEl={anchorEl}>
-            {messages.map((msg) => {
-              return (
-                <Box
-                  key={uuidv4()}
-                  sx={{ border: 1, p: 1, bgcolor: "background.paper" }}
-                >
-                  {msg.title}
-                </Box>
-              );
-            })}
-          </Popper>
+          {showNotifications && (
+            <div className="notification-wrapper">
+              {notifications &&
+                notifications.map((msg) => {
+                  return (
+                    <div className="notifications" key={uuidv4()}>
+                      Today is <b>{msg.name}'s </b>birthday🎂
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
         <div className="lang_wrapper">
           <div className="lang_icon">

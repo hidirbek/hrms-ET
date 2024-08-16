@@ -3,8 +3,10 @@ import "./TrainingList.css";
 import { v4 as uuidv4 } from "uuid";
 import { jwtDecode } from "jwt-decode";
 import apiRequest from "../../service/request";
-import { TrainingEditModal } from "../TrainingModal/TrainingModal";
-import { AddTrainingModal } from "../TrainingModal/TrainingModal";
+import {
+  TrainingEditModal,
+  AddTrainingModal,
+} from "../TrainingModal/TrainingModal";
 import dayjs from "dayjs";
 
 const TrainingList = () => {

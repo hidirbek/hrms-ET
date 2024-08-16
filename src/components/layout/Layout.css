@@ -1,8 +1,15 @@
+.site_main{
+  grid-area: main;
+}
+.site-header{
+  grid-area: header;
+}
+
 .layout{
   display: grid;
   grid-template-areas:
     "sidebar header"
-    "sidebar .";
+    "sidebar main";
   grid-template-rows: 77px 1fr;
   grid-template-columns: 220px 1fr;
 }

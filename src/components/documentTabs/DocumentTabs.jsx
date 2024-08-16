@@ -55,7 +55,7 @@ export default function DocumentTabs() {
     e.preventDefault();
     const data = { ...formData, file };
 
-    // const response = await apiRequest.post(`/events/create`, formData);
+    // const response = await apiRequest.post(`/docs/create`, formData);
     // alert(response.message);
 
     // handleClose();
@@ -220,23 +220,36 @@ export default function DocumentTabs() {
                   <div>
                     <div className="modal_inp-wrapper">
                       <span>Department</span>
-                      <input
+                      {/* <input
                         className="modal_input"
                         name="department"
                         required
                         type="text"
                         onChange={handleChange}
-                      />
+                      /> */}
+                      <select
+                        onChange={handleChange}
+                        className="modal_input"
+                        name="department"
+                        id=""
+                      >
+                        <option value="All">All</option>
+                        <option value="New Business dep">
+                          New Business dep
+                        </option>
+                      </select>
                     </div>
                     <div className="modal_inp-wrapper">
                       <span>Division</span>
-                      <input
+                      <select
+                        onChange={handleChange}
                         className="modal_input"
                         name="division"
-                        required
-                        type="text"
-                        onChange={handleChange}
-                      />
+                        id=""
+                      >
+                        <option value="All">All</option>
+                        <option value="SW development">SW development</option>
+                      </select>
                     </div>
                   </div>
                 </div>

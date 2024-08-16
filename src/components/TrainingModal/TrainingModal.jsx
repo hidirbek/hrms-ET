@@ -121,23 +121,33 @@ export const TrainingEditModal = ({
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Department</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="department"
                     type="text"
                     value={formData.department}
                     onChange={handleChange}
-                  />
+                  /> */}
+                  <select className="modal_input" name="department" id="">
+                    <option value={formData.division}>
+                      {formData.department}
+                    </option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Division</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="division"
                     type="text"
                     value={formData.division}
                     onChange={handleChange}
-                  />
+                  /> */}
+                  <select className="modal_input" name="division" id="">
+                    <option value={formData.division}>
+                      {formData.division}
+                    </option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Select Floor</span>
@@ -242,23 +252,39 @@ export const AddTrainingModal = ({ refetchData }) => {
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Department</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="department"
                     type="text"
                     onChange={handleChange}
                     required
-                  />
+                  /> */}
+                  <select
+                    onChange={handleChange}
+                    className="modal_input"
+                    name="department"
+                    id=""
+                  >
+                    <option value="New Business dep">New Business dep</option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Division</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="division"
                     type="text"
                     onChange={handleChange}
                     required
-                  />
+                  /> */}
+                  <select
+                    onChange={handleChange}
+                    className="modal_input"
+                    name="division"
+                    id=""
+                  >
+                    <option value="SW development">SW development</option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Select Floor</span>

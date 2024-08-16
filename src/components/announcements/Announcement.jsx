@@ -49,7 +49,7 @@ const Announcement = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
 
     const response = await apiRequest.post(`/events/create`, formData);
     alert(response.message);
@@ -58,16 +58,6 @@ const Announcement = () => {
     handleClose();
   };
 
-  // console.log(dayjs(eventDate));
-  // console.log(eventDate);
-  // console.log(new Date("2024-08-22"));
-
-  // console.log(role);
-  // const announcements = [
-  //   { title: t("db_ann-title"), new: true },
-  //   { title: t("db_ann-title"), new: true },
-  //   { title: t("db_ann-title"), new: false },
-  // ];
   return (
     <div className="dash_announcement">
       <div className="announcement-head">

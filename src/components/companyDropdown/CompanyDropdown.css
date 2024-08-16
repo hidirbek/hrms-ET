@@ -1,7 +1,7 @@
 
 /* src/Dropdown.css */
 .dropdown-container {
-  width: 800px;
+  width: 1000px;
   display: flex;
   flex-direction: column;
 }
@@ -34,6 +34,17 @@
   display: block;
 }
 
+.accordion_comp>div{
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+.accordion_comp_nowr{
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
 .MuiPaper-root {
   box-shadow:none !important;
 
@@ -59,7 +70,12 @@
   column-gap: 20px;
 }
 .company_dropdown>div{
-  width: 350px;
+  width: 400px;
 
 }
 
+
+.comp_card-title{
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}

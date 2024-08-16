@@ -1,3 +1,6 @@
+body{
+  position: relative;
+}
 .site-sidebar{
   width: 220px;
   height: 100%;
@@ -5,6 +8,9 @@
   grid-area: sidebar;
   border-right: 1px solid var(--primary-text);
   min-height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
 }
 .hrm-logo{
   color: var(--main-red);

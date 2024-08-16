@@ -183,13 +183,23 @@ export const EditUserModal = ({
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Gender</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="gender"
                     type="text"
                     value={formData.gender}
                     onChange={handleChange}
-                  />
+                  /> */}
+                  <select
+                    onChange={handleChange}
+                    className="modal_input"
+                    name="gender"
+                    id=""
+                  >
+                    <option value={formData.gender}>{formData.gender}</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Nationality</span>
@@ -203,13 +213,25 @@ export const EditUserModal = ({
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Marital Status</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="marriage"
                     type="text"
                     value={formData.marriage}
                     onChange={handleChange}
-                  />
+                  /> */}
+                  <select
+                    onChange={handleChange}
+                    className="modal_input"
+                    name="marriage"
+                    id=""
+                  >
+                    <option value={formData.marriage}>
+                      {formData.marriage}
+                    </option>
+                    <option value="married">Married</option>
+                    <option value="not married">Not Married</option>
+                  </select>
                 </div>
               </div>
               <div>
@@ -287,23 +309,33 @@ export const EditUserModal = ({
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Department</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="department"
                     type="text"
                     value={formData.department}
                     onChange={handleChange}
-                  />
+                  /> */}
+                  <select className="modal_input" name="department" id="">
+                    <option value={formData.department}>
+                      {formData.department}
+                    </option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Division</span>
-                  <input
+                  {/* <input
                     className="modal_input"
                     name="division"
                     type="text"
                     value={formData.division}
                     onChange={handleChange}
-                  />
+                  /> */}
+                  <select className="modal_input" name="division" id="">
+                    <option value={formData.division}>
+                      {formData.division}
+                    </option>
+                  </select>
                 </div>
                 <div className="modal_inp-wrapper">
                   <span className="modal_inp-title">Username</span>
@@ -358,13 +390,16 @@ export const AddUserModal = ({ refetchData }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    console.log({ name, value });
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     // console.log(formData, "data");
 
     const response = await apiRequest.post(`/users/create`, formData);
@@ -430,13 +465,22 @@ export const AddUserModal = ({ refetchData }) => {
                   </div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Gender</span>
-                    <input
+                    {/* <input
                       className="modal_input"
                       name="gender"
                       type="text"
                       onChange={handleChange}
                       required
-                    />
+                    /> */}
+                    <select
+                      onChange={handleChange}
+                      className="modal_input"
+                      name="gender"
+                      id=""
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
                   </div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Nationality</span>
@@ -450,13 +494,22 @@ export const AddUserModal = ({ refetchData }) => {
                   </div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Marital Status</span>
-                    <input
+                    {/* <input
                       className="modal_input"
                       name="marriage"
                       type="text"
                       onChange={handleChange}
                       required
-                    />
+                    /> */}
+                    <select
+                      onChange={handleChange}
+                      className="modal_input"
+                      name="marriage"
+                      id=""
+                    >
+                      <option value="married">Married</option>
+                      <option value="not married">Not married</option>
+                    </select>
                   </div>
                 </div>
                 <div>
@@ -534,23 +587,27 @@ export const AddUserModal = ({ refetchData }) => {
                   </div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Department</span>
-                    <input
+                    <select
+                      onChange={handleChange}
                       className="modal_input"
                       name="department"
-                      type="text"
-                      onChange={handleChange}
-                      required
-                    />
+                      id=""
+                    >
+                      <option value="Not Selected">Not Selected</option>
+                      <option value="New Business dep">New Business dep</option>
+                    </select>
                   </div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Division</span>
-                    <input
+                    <select
+                      onChange={handleChange}
                       className="modal_input"
                       name="division"
-                      type="text"
-                      onChange={handleChange}
-                      required
-                    />
+                      id=""
+                    >
+                      <option value="Not Selected">Not Selected</option>
+                      <option value="SW development">SW development</option>
+                    </select>
                   </div>
                   <div className="modal_inp-wrapper">
                     <span className="modal_inp-title">Username</span>

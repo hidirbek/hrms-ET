@@ -10,6 +10,13 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./CompanyDropdown.css";
 import { v4 as uuidv4 } from "uuid";
 import apiRequest from "../../service/request";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { jwtDecode } from "jwt-decode";
+import CompanyModal from "../companyModal/CompanyModal";
+
+const token = localStorage.getItem("accessToken");
+const decoded = jwtDecode(token);
+const role = decoded.role;
 
 const DropdownItem = (department) => (
   <Accordion className="first_column">
@@ -17,13 +24,25 @@ const DropdownItem = (department) => (
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"
       id="panel1a-header"
+      className="accordion_comp"
     >
       <Typography>
-        <strong className="comStr_title">
-          {department.department.dep_title}
-        </strong>
-        <span className="comStr_head">{department.department.dep_head}</span>
+        <strong className="comStr_title">{department.department.title}</strong>
+        <span className="comStr_head">{department.department.head}</span>
       </Typography>
+      {role === "admin" ? (
+        <div style={{ display: "flex" }}>
+          <CompanyModal
+            title={department.department.title}
+            head={department.department.head}
+            onClick={(event) => event.stopPropagation()}
+          />
+          <DeleteOutlineIcon
+            className="del_icon"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </AccordionSummary>
     <AccordionDetails className="sub-department">
       {department.department.divisions &&
@@ -38,11 +57,25 @@ const DropdownItem = (department) => (
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
+                className="accordion_comp"
               >
                 <Typography>
-                  <strong className="comStr_title">{div.div_title}</strong>
-                  <span className="comStr_head">{div.div_head}</span>
+                  <strong className="comStr_title">{div.title}</strong>
+                  <span className="comStr_head">{div.head}</span>
                 </Typography>
+                {role === "admin" ? (
+                  <div>
+                    <CompanyModal
+                      title={div.title}
+                      head={div.head}
+                      onClick={(event) => event.stopPropagation()}
+                    />
+                    <DeleteOutlineIcon
+                      className="del_icon"
+                      onClick={(event) => event.stopPropagation()}
+                    />
+                  </div>
+                ) : null}
               </AccordionSummary>
               <AccordionDetails className="sub-department">
                 {div.team && div.team.length > 0 ? (
@@ -51,12 +84,25 @@ const DropdownItem = (department) => (
                     //   console.log(div);
                     // }
                     <Box key={uuidv4()} className="sub-department">
-                      <Typography>
-                        <strong className="comStr_title">
-                          {team.team_title}
-                        </strong>
-                        <span className="comStr_head">{team.team_head}</span>
-                      </Typography>
+                      <Box className="accordion_comp_nowr">
+                        <div>
+                          <strong className="comStr_title">{team.title}</strong>
+                          <span className="comStr_head">{team.head}</span>
+                        </div>
+                        {role === "admin" ? (
+                          <div style={{ display: "flex" }}>
+                            <CompanyModal
+                              title={team.title}
+                              head={team.head}
+                              onClick={(event) => event.stopPropagation()}
+                            />
+                            <DeleteOutlineIcon
+                              className="del_icon"
+                              onClick={(event) => event.stopPropagation()}
+                            />
+                          </div>
+                        ) : null}
+                      </Box>
                     </Box>
                   ))
                 ) : (
@@ -74,33 +120,61 @@ const DropdownItem = (department) => (
 );
 const CoeDep = (coe) => (
   //   {
-  //   console.log(coe.coe.coe_dep.length);
+  //   console.log(coe.coe.dep.length);
   // };
   <Accordion>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"
       id="panel1a-header"
+      className="accordion_comp"
     >
       <Typography>
-        <strong className="comStr_title">{coe.coe.coe_title}</strong>
-        <span className="comStr_head">{coe.coe.coe_head}</span>
+        <strong className="comStr_title">{coe.coe.title}</strong>
+        <span className="comStr_head">{coe.coe.head}</span>
       </Typography>
+      {role === "admin" ? (
+        <div style={{ display: "flex" }}>
+          <CompanyModal
+            title={coe.coe.title}
+            head={coe.coe.head}
+            onClick={(event) => event.stopPropagation()}
+          />
+          <DeleteOutlineIcon
+            className="del_icon"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </AccordionSummary>
     <AccordionDetails className="sub-department">
-      {coe.coe.coe_dep && coe.coe.coe_dep.length > 0 ? (
-        coe.coe.coe_dep.map((dep) => (
+      {coe.coe.dep && coe.coe.dep.length > 0 ? (
+        coe.coe.dep.map((dep) => (
           <Box key={uuidv4()} className="sub-department">
             <Accordion>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
+                className="accordion_comp"
               >
                 <Typography>
-                  <strong className="comStr_title">{dep.dep_title}</strong>
-                  <span className="comStr_head">{dep.dep_head}</span>
+                  <strong className="comStr_title">{dep.title}</strong>
+                  <span className="comStr_head">{dep.head}</span>
                 </Typography>
+                {role === "admin" ? (
+                  <div style={{ display: "flex" }}>
+                    <CompanyModal
+                      title={dep.title}
+                      head={dep.head}
+                      onClick={(event) => event.stopPropagation()}
+                    />
+                    <DeleteOutlineIcon
+                      className="del_icon"
+                      onClick={(event) => event.stopPropagation()}
+                    />
+                  </div>
+                ) : null}
               </AccordionSummary>
               <AccordionDetails className="sub-department">
                 {dep.divisions && dep.divisions.length > 0 ? (
@@ -111,49 +185,73 @@ const CoeDep = (coe) => (
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panel1a-content"
                           id="panel1a-header"
+                          className="accordion_comp"
                         >
                           <Typography>
                             <strong className="comStr_title">
-                              {div.div_title}
+                              {div.title}
                             </strong>
-                            <span className="comStr_head">{div.div_head}</span>
+                            <span className="comStr_head">{div.head}</span>
                           </Typography>
+                          {role === "admin" ? (
+                            <div style={{ display: "flex" }}>
+                              <CompanyModal
+                                title={div.title}
+                                head={div.head}
+                                onClick={(event) => event.stopPropagation()}
+                              />
+                              <DeleteOutlineIcon
+                                className="del_icon"
+                                onClick={(event) => event.stopPropagation()}
+                              />
+                            </div>
+                          ) : null}
                         </AccordionSummary>
                         <AccordionDetails className="sub-department">
-                          {div.team && div.team.length > 0 ? (
+                          {div.team && div.team.length > 1 ? (
                             div.team.map((team) => (
-                              //    {
-                              //   console.log(div);
+                              //   {
+                              //   console.log(div.team.length);
                               // }
                               <Box key={uuidv4()} className="sub-department">
-                                <Accordion>
-                                  <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                  >
-                                    <Typography>
-                                      <strong className="comStr_title">
-                                        {team.team_title}
-                                      </strong>
-                                      <span className="comStr_head">
-                                        {team.team_head}
-                                      </span>
-                                    </Typography>
-                                  </AccordionSummary>
-                                  <AccordionDetails className="sub-department"></AccordionDetails>
-                                </Accordion>
+                                <Box className="accordion_comp_nowr">
+                                  <div>
+                                    <strong className="comStr_title">
+                                      {team.title}
+                                    </strong>
+                                    <span className="comStr_head">
+                                      {team.head}
+                                    </span>
+                                  </div>
+                                  {role === "admin" ? (
+                                    <div style={{ display: "flex" }}>
+                                      <CompanyModal
+                                        title={team.title}
+                                        head={team.head}
+                                        onClick={(event) =>
+                                          event.stopPropagation()
+                                        }
+                                      />
+                                      <DeleteOutlineIcon
+                                        className="del_icon"
+                                        onClick={(event) =>
+                                          event.stopPropagation()
+                                        }
+                                      />
+                                    </div>
+                                  ) : null}
+                                </Box>
                               </Box>
                             ))
                           ) : (
-                            <Typography>No sub-departments</Typography>
+                            <Box>No Teams</Box>
                           )}
                         </AccordionDetails>
                       </Accordion>
                     </Box>
                   ))
                 ) : (
-                  <Typography>No Teams</Typography>
+                  <Box>No Division</Box>
                 )}
               </AccordionDetails>
             </Accordion>
